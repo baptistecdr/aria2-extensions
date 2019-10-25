@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Aria2 Integration Popup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../app.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            width: 465px;
+            height: 100%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8 text-left align-self-center" id="page-global-stat">
+        </div>
+        <script id="template-global-stat" type="x-tmpl-mustache">
+                    ↓️ {{ downloadSpeed }} - ↑ {{ uploadSpeed }}
+
+
+        </script>
+        <div class="col-4 text-right align-self-center">
+            <div class="btn-group" role="group">
+                <button class="btn btn-primary btn-sm" id="btn-show-add" type="button" data-localize="popup_add">Add</button>
+                <button class="btn btn-danger btn-sm" id="btn-purge" type="button" data-localize="popup_purge">Purge</button>
+            </div>
+        </div>
+    </div>
+    <hr style="margin-top:10px;margin-bottom:10px">
+    <div id="page-add-urls-magnets">
+        <div class="row" style="margin-top: 5px">
+            <div class="col-12">
+                <form class="form-inline" id="form-add-urls-magnets">
+                    <div class="input-group input-group-sm">
+                        <textarea type="text" class="form-control" style="min-height:31px;max-height: 100px"
+                                  placeholder="URLs and/or Magnets" id="tbx-urls-magnets"
+                                  aria-label="URLs and/or Magnets" aria-describedby="add_urls_magnets" data-localize="popup_add_links"></textarea>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary btn-sm" id="btn-add" data-localize="popup_add">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 mt-2">
+                <form class="form-inline" id="form-add-torrent">
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file"
+                                   accept="application/x-bittorrent, .torrent, application/metalink4+xml, application/metalink+xml, .meta4, .metalink"
+                                   multiple="multiple"
+                                   class="custom-file-input" id="input-torrents">
+                            <label class="custom-file-label" style="font-size: 0.875rem;color: #6c757d"
+                                   for="input-torrents"
+                                   aria-describedby="chooseTorrentFiles" data-localize="popup_browse_files">Choose torrent and/or metalink files...</label>
+                        </div>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary btn-sm" style="height: 35px"
+                                    id="btn-add-torrent" data-localize="popup_add">Add
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="page-downloads">
+    </div>
+    <script id="template-download" type="x-tmpl-mustache">
+    {{^result}}<p class="font-italic" data-localize="popup_no_downloads">This place is quiet, so quiet...</p>{{/result}}
+    {{#result}}
+        <div class="row" style="margin-top: 5px">
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-12 align-self-center text-truncate font-weight-bold" style="font-size:smaller">
+                       {{ filename }}
+                    </div>
+                    <div class="col-12 align-self-center" style="font-size:small;padding-left:25px"><span data-localize="popup_status_{{ status }}"></span>, {{ completedLengthFormatted }}/{{ totalLengthFormatted }}{{#eta}}, <span data-localize="popup_eta">ETA</span>: {{ eta }}{{/eta}}
+                    </div>
+                    {{#eta}}
+                    <div class="col-12 align-self-center" style="font-size:small;padding-left:25px">{{ connections }} <span data-localize="popup_connections">connection(s)</span>,
+                        ↓️ {{ downloadSpeedFormatted }} - ↑ {{ uploadSpeedFormatted }}
+                    </div>
+                    {{/eta}}
+                </div>
+            </div>
+            <div class="col-3 text-right align-self-center">
+                <button class="btn btn-danger btn-sm btn-delete-download" id="{{status}}_{{gid}}" type="button" data-localize="popup_delete">Delete</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 5px">
+            <div class="col-12 align-self-center" style="padding-left:25px">
+                <div class="progress position-relative">
+                    <div class="progress-bar {{style}}" role="progressbar" style="width: {{percentage}}%" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <small class="align-self-center justify-content-center d-flex position-absolute w-100 {{color}}">{{percentage}}%</small>
+                </div>
+            </div>
+        </div>
+        {{/result}}
+
+    </script>
+</div>
+</body>
+<script src="popup.js"></script>
+</html>
