@@ -1,4 +1,4 @@
-import Aria2 from "aria2";
+import Aria2 from 'aria2';
 
 export class Downloader {
     constructor(settings) {
@@ -46,41 +46,41 @@ export class Downloader {
     }
 
     addUri(uri, options) {
-        return this.aria2.call("addUri", [uri], options);
+        return this.aria2.call('addUri', [uri], options);
     }
 
     addTorrent(torrent) {
-        return this.aria2.call("addTorrent", torrent);
+        return this.aria2.call('addTorrent', torrent);
     }
 
     addMetalink(metalink) {
-        return this.aria2.call("addMetalink", metalink);
+        return this.aria2.call('addMetalink', metalink);
     }
 
     getGlobalStat() {
-        return this.aria2.call("getGlobalStat", [], {});
+        return this.aria2.call('getGlobalStat', [], {});
     }
 
     getDownloads(offsetWaiting, numWaiting, offsetStopped, numStopped) {
         return this.aria2.multicall(
             [
-                ["tellActive"],
-                ["tellWaiting", offsetWaiting, numWaiting],
-                ["tellStopped", offsetStopped, numStopped],
+                ['tellActive'],
+                ['tellWaiting', offsetWaiting, numWaiting],
+                ['tellStopped', offsetStopped, numStopped],
             ]
         );
     }
 
     purgeDownloadResult() {
-        return this.aria2.call("purgeDownloadResult");
+        return this.aria2.call('purgeDownloadResult');
     }
 
     removeDownloadResult(gid) {
-        return this.aria2.call("removeDownloadResult", gid);
+        return this.aria2.call('removeDownloadResult', gid);
     }
 
     remove(gid) {
-        return this.aria2.call("remove", gid);
+        return this.aria2.call('remove', gid);
     }
 
     siteListProc(site) {
@@ -108,7 +108,7 @@ export class Downloader {
             const res = await fetch(url);
             const blob = await res.blob();
             const b64 = await this.encodeTorrentOrMetalinkFile(blob);
-            if (url.endsWith(".torrent") || filename.endsWith(".torrent")) {
+            if (url.endsWith('.torrent') || filename.endsWith('.torrent')) {
                 return this.addTorrent(b64);
             } else {
                 return this.addMetalink(b64);
@@ -119,7 +119,7 @@ export class Downloader {
     }
 
     async captureDownloadFile(item, tab, cookies) {
-        if (item.filename.match(/\.torrent$|\.meta4$|\.metalink$'/)) {
+        if (item.filename.match(/\.torrent$|\.meta4$|\.metalink$/)) {
             return this.captureTorrentOrMetalink(item.url, item.filename);
         } else {
             return this.addUri(item.url, {header: [`Referer: ${tab.url}`, `Cookie: ${cookies}`]});
@@ -127,8 +127,8 @@ export class Downloader {
     }
 
     async captureLink(link, tab, cookies) {
-        if (link.match(/\.torrent$|\.meta4$|\.metalink$'/)) {
-            return this.captureTorrentOrMetalink(link, "");
+        if (link.match(/\.torrent$|\.meta4$|\.metalink$/)) {
+            return this.captureTorrentOrMetalink(link, '');
         } else {
             return this.addUri(link,{header: [`Referer: ${tab.url}`, `Cookie: ${cookies}`]});
         }
