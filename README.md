@@ -1,7 +1,7 @@
 <p align="center">
   <h3 align="center">Aria2c Integration</h3>
   <p align="center">
-    Download files with Aria2
+    Captures new download tasks and sends them to Aria2 automatically.
     <br>
     <a href="https://github.com/baptistecdr/aria2-extensions/issues/new">Report bug</a>
     ·
@@ -20,8 +20,17 @@
 - [Contibutors](#contributors)
 - [Thanks to](#thanks-to)
 
-## Quick start
+## Description
+- This extension captures new download tasks and sends them to aria2 automatically.
+- It also adds a context menu item
+    - Right click any link or select multiple links and click "Download with Aria2" to add to Aria2 download queue.
+- Click the extension icon to reveal a quick view of tasks
+    - Click on a progress bar to pause/unpause a task.
+    - You can add URLs, magnets links and torrent files. 
 
+## Quick start
+- [Chrome Web Store]()
+- [Firefox Extension Store]()
 ## How to build
 - Install [Node.JS](https://nodejs.org/) LTS or current
 - Install [Gulp](https://gulpjs.com/)
@@ -40,3 +49,5 @@ Contributions are welcome!
 ## Contributors
 
 ## Thanks to
+- https://github.com/robbielj/chrome-aria2-integration
+- https://github.com/rahuliyer95/chrome-aria2-integration
