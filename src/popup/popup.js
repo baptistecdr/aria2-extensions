@@ -98,7 +98,8 @@ async function getDownloads() {
         console.error(`Cannot get downloads from the server. ${error}`);
     }
     $('.btn-delete-download').on('click', async (e) => {
-        const [status, gid] = e.target.id.split('_');
+        const gid = e.currentTarget.getAttribute('data-gid');
+        const status = e.currentTarget.getAttribute('data-status');
         try {
             if (status === 'active') {
                 await downloader.remove(gid);
@@ -107,6 +108,19 @@ async function getDownloads() {
             }
         } catch (error) {
             console.error(`Cannot remove download result with gid '${gid}'. (${error})`);
+        }
+    });
+    $('.progress').on('click', async (e) => {
+        const gid = e.currentTarget.getAttribute('data-gid');
+        const status = e.currentTarget.getAttribute('data-status');
+        try {
+            if (status === 'active') {
+                await downloader.pause(gid);
+            } else {
+                await downloader.unpause(gid);
+            }
+        } catch (error) {
+            console.error(`Cannot pause download result with gid '${gid}'. (${error})`);
         }
     });
 }

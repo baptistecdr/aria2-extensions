@@ -49,6 +49,14 @@ export class Downloader {
         return this.aria2.call('addUri', [uri], options);
     }
 
+    pause(gid) {
+        return this.aria2.call('pause', gid);
+    }
+
+    unpause(gid) {
+        return this.aria2.call('unpause', gid);
+    }
+
     addTorrent(torrent) {
         return this.aria2.call('addTorrent', torrent);
     }
@@ -130,7 +138,7 @@ export class Downloader {
         if (link.match(/\.torrent$|\.meta4$|\.metalink$/)) {
             return this.captureTorrentOrMetalink(link, '');
         } else {
-            return this.addUri(link,{header: [`Referer: ${tab.url}`, `Cookie: ${cookies}`]});
+            return this.addUri(link, {header: [`Referer: ${tab.url}`, `Cookie: ${cookies}`]});
         }
     }
 }

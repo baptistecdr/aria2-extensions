@@ -89,12 +89,12 @@
                 </div>
             </div>
             <div class="col-3 text-right align-self-center">
-                <button class="btn btn-danger btn-sm btn-delete-download" id="{{status}}_{{gid}}" type="button" data-localize="popup_delete">Delete</button>
+                <button class="btn btn-danger btn-sm btn-delete-download" data-status="{{status}}" data-gid="{{gid}}" type="button" data-localize="popup_delete">Delete</button>
             </div>
         </div>
         <div class="row" style="margin-top: 5px">
             <div class="col-12 align-self-center" style="padding-left:25px">
-                <div class="progress position-relative">
+                <div class="progress position-relative" data-status="{{status}}" data-gid="{{gid}}">
                     <div class="progress-bar {{style}}" role="progressbar" style="width: {{percentage}}%" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
                     <small class="align-self-center justify-content-center d-flex position-absolute w-100 {{color}}">{{percentage}}%</small>
                 </div>
