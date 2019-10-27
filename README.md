@@ -1,17 +1,26 @@
+<h3 align="center">Aria2c Integration</h3>
 <p align="center">
-  <h3 align="center">Aria2c Integration</h3>
-  <p align="center">
     Captures new download tasks and sends them to Aria2 automatically.
     <br>
     <a href="https://github.com/baptistecdr/aria2-extensions/issues/new">Report bug</a>
     ·
     <a href="https://github.com/baptistecdr/aria2-extensions/issues/new">Request feature</a>
-  </p>
-  <img src="https://snipboard.io/xBDZ0E.jpg" width="400px"/>
-  <img src="https://snipboard.io/hm89Ed.jpg" width="400px"/>
-  <img src="https://snipboard.io/YsXzhB.jpg" width="400px"/>
-  <img src="https://snipboard.io/e64IFV.jpg" width="400px"/>
-  <img src="https://snipboard.io/FbyZBJ.jpg" width="400px"/>
+</p>
+
+<p align="center">
+    <img src="https://snipboard.io/xBDZ0E.jpg" alt="No task" width="400px"/>
+</p>
+<p align="center">
+    <img src="https://snipboard.io/hm89Ed.jpg" alt="Add task" width="400px"/>
+</p>
+<p align="center">
+    <img src="https://snipboard.io/YsXzhB.jpg" alt="Task running" width="400px"/>
+</p>
+<p align="center">
+    <img src="https://snipboard.io/e64IFV.jpg" alt="Task paused" width="400px"/>
+</p>
+<p align="center>
+    <img src="https://snipboard.io/FbyZBJ.jpg" alt="Task finished" width="400px"/>
 </p>
 
 ## Table of contents
