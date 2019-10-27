@@ -19,7 +19,7 @@
 <p align="center">
     <img src="https://snipboard.io/e64IFV.jpg" alt="Task paused" width="400px"/>
 </p>
-<p align="center>
+<p align="center">
     <img src="https://snipboard.io/FbyZBJ.jpg" alt="Task finished" width="400px"/>
 </p>
 
