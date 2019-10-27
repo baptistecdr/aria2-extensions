@@ -75,6 +75,7 @@ function localize() {
 }
 
 loadSettings();
+saveSettings();
 localize();
 
 $('#settings-form').on('submit', (e) => {

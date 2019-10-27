@@ -20,10 +20,13 @@ function showNotification(message) {
     }), 3000);
 }
 
-chrome.contextMenus.create({
-    title: chrome.i18n.getMessage('context_menus_title') || 'Download with Aria2',
-    id: 'linkclick',
-    contexts: ['link', 'selection']
+chrome.runtime.onInstalled.addListener((details) => {
+    chrome.contextMenus.create({
+        title: chrome.i18n.getMessage('context_menus_title') || 'Download with Verre',
+        id: 'linkclick',
+        contexts: ['link', 'selection']
+    });
+    chrome.runtime.openOptionsPage();
 });
 
 function showNotificationSuccess() {
