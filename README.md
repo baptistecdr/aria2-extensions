@@ -30,7 +30,8 @@
 
 ## Quick start
 - [Chrome Web Store]()
-- [Firefox Extension Store]()
+- [Firefox Extension Store](https://addons.mozilla.org/en-US/firefox/addon/aria2-extension/)
+
 ## How to build
 - Install [Node.JS](https://nodejs.org/) LTS or current
 - Install [Gulp](https://gulpjs.com/)
