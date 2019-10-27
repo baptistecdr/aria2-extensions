@@ -8,7 +8,9 @@
     <a href="https://github.com/baptistecdr/aria2-extensions/issues/new">Request feature</a>
   </p>
   <img src="https://snipboard.io/xBDZ0E.jpg" width="400px"/>
+  <img src="https://snipboard.io/hm89Ed.jpg" width="400px"/>
   <img src="https://snipboard.io/YsXzhB.jpg" width="400px"/>
+  <img src="https://snipboard.io/e64IFV.jpg" width="400px"/>
   <img src="https://snipboard.io/FbyZBJ.jpg" width="400px"/>
 </p>
 
