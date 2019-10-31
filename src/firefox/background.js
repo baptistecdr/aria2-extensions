@@ -19,12 +19,13 @@ async function showNotification(message) {
 }
 
 browser.runtime.onInstalled.addListener(async () => {
-    browser.menus.create({
-        title: browser.i18n.getMessage('context_menus_title') || 'Download with Verre',
-        id: 'linkclick',
-        contexts: ['link', 'selection']
-    });
     await browser.runtime.openOptionsPage();
+});
+
+browser.menus.create({
+    title: browser.i18n.getMessage('context_menus_title') || 'Download with Aria2',
+    id: 'linkclick',
+    contexts: ['link', 'selection']
 });
 
 async function showNotificationSuccess() {

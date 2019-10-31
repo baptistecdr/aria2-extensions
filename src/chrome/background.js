@@ -22,7 +22,7 @@ function showNotification(message) {
 
 chrome.runtime.onInstalled.addListener((details) => {
     chrome.contextMenus.create({
-        title: chrome.i18n.getMessage('context_menus_title') || 'Download with Verre',
+        title: chrome.i18n.getMessage('context_menus_title') || 'Download with Aria2',
         id: 'linkclick',
         contexts: ['link', 'selection']
     });
