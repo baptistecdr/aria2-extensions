@@ -77,18 +77,17 @@ async function getDownloads() {
         for (let i = 0; i < response.length; i++) {
             $.each(response[i], (i, categories) => {
                 $.each(categories, (j, download) => {
-                    if (download !== undefined) {
-                        download.filename = download.bittorrent ? download.bittorrent.info.name : path.basename(download.files[0].path);
-                        download.completedLengthFormatted = filesize(download.completedLength);
-                        download.totalLengthFormatted = filesize(download.totalLength);
-                        download.downloadSpeedFormatted = `${filesize(download.downloadSpeed)}/s`;
-                        download.uploadSpeedFormatted = `${filesize(download.uploadSpeed)}/s`;
-                        download.eta = download.status !== 'active' ? null : download.downloadSpeed === '0' ? '∞' : toHHMMSS((download.totalLength - download.completedLength) / download.downloadSpeed);
-                        download.percentage = Math.round(download.completedLength * 100 / download.totalLength) || 0;
-                        download.style = download.status === 'complete' ? 'bg-success' : (download.status === 'waiting' || download.status === 'paused') ? 'bg-warning' : download.status === 'error' || download.status === 'removed' ? 'bg-danger' : '';
-                        download.color = download.percentage >= 50 ? 'text-white' : '';
-                        downloads.result.push(download);
-                    }
+                    if (download === undefined) return;
+                    download.filename = download.bittorrent && download.bittorrent.info ? download.bittorrent.info.name : path.basename(download.files[0].path);
+                    download.completedLengthFormatted = filesize(download.completedLength);
+                    download.totalLengthFormatted = filesize(download.totalLength);
+                    download.downloadSpeedFormatted = `${filesize(download.downloadSpeed)}/s`;
+                    download.uploadSpeedFormatted = `${filesize(download.uploadSpeed)}/s`;
+                    download.eta = download.status !== 'active' ? null : download.downloadSpeed === '0' ? '∞' : toHHMMSS((download.totalLength - download.completedLength) / download.downloadSpeed);
+                    download.percentage = Math.round(download.completedLength * 100 / download.totalLength) || 0;
+                    download.style = download.status === 'complete' ? 'bg-success' : (download.status === 'waiting' || download.status === 'paused') ? 'bg-warning' : download.status === 'error' || download.status === 'removed' ? 'bg-danger' : '';
+                    download.color = download.percentage >= 50 ? 'text-white' : '';
+                    downloads.result.push(download);
                 });
             });
         }
