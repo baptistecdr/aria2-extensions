@@ -47,6 +47,9 @@ function saveSettings() {
         $('#btn-save').removeClass('btn-outline-success');
         $('#btn-save').addClass('btn-primary');
     }, 1000);
+    chrome.runtime.sendMessage({
+        settings: 'Updated'
+    });
 }
 
 $('#enable-capture').on('change',  (e) => {

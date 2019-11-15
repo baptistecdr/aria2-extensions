@@ -2,8 +2,8 @@ import * as store from 'store';
 import {Settings} from '../downloader/settings';
 import {Downloader} from '../downloader/downloader';
 
-const settings = new Settings(store);
-const downloader = new Downloader(settings);
+let settings = new Settings(store);
+let downloader = new Downloader(settings);
 
 (async () => await downloader.connect())();
 
@@ -36,6 +36,11 @@ async function showNotificationError(file, error) {
     console.error(`Cannot add '${file}' to the server. (${error})'`);
     await showNotification(chrome.i18n.getMessage('notification_message_error') || 'The download cannot be sent to Aria2.')
 }
+
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    settings = new Settings(store);
+    downloader = new Downloader(settings);
+});
 
 async function getCurrentTab() {
     const tabs = await browser.tabs.query({
