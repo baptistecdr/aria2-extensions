@@ -12,7 +12,7 @@ export class Settings {
     }
 
     get secure() {
-        return this.settings.get('secure') || true;
+        return this.settings.get('secure');
     }
 
     set secure(secure) {
