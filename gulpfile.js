@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const htmlMinify = require('gulp-htmlmin');
 const jsonMinify = require('gulp-json-minify');
 const sass = require('gulp-sass');
+sass.compiler = require('node-sass');
 const babel = require("gulp-babel");
 const webpack = require('webpack-stream');
 const TerserPlugin = require('terser-webpack-plugin');

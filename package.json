@@ -5,6 +5,7 @@
   "main": "background.js",
   "scripts": {
     "chrome": "./node_modules/.bin/gulp chrome",
+    "firefox": "./node_modules/.bin/gulp firefox",
     "build": "./node_modules/.bin/gulp"
   },
   "author": "baptistecdr",
@@ -33,7 +34,8 @@
     "mustache": "~3.0.3",
     "readable-stream": "~3.4.0",
     "terser-webpack-plugin": "~2.0.1",
-    "webpack-stream": "~5.2.1"
+    "webpack-stream": "~5.2.1",
+    "node-sass": "~4.13.0"
   },
   "dependencies": {
     "@babel/runtime": "~7.6.0",
