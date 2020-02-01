@@ -9,18 +9,27 @@
 
 <p align="center">
     <img src="https://snipboard.io/xBDZ0E.jpg" alt="No task" width="400px"/>
+    <img src="https://i.snipboard.io/h6XYs7.jpg" alt="No task" width="400px"/>
 </p>
 <p align="center">
     <img src="https://snipboard.io/hm89Ed.jpg" alt="Add task" width="400px"/>
+    <img src="https://i.snipboard.io/RhgFQX.jpg" alt="Add task" width="400px"/>
 </p>
 <p align="center">
     <img src="https://snipboard.io/YsXzhB.jpg" alt="Task running" width="400px"/>
+    <img src="https://i.snipboard.io/REru8T.jpg" alt="Task running" width="400px"/>
 </p>
 <p align="center">
     <img src="https://snipboard.io/e64IFV.jpg" alt="Task paused" width="400px"/>
+    <img src="https://i.snipboard.io/Ycoij2.jpg" alt="Task paused" width="400px"/>
 </p>
 <p align="center">
     <img src="https://snipboard.io/FbyZBJ.jpg" alt="Task finished" width="400px"/>
+    <img src="https://i.snipboard.io/Liwpn5.jpg" alt="Task finished" width="400px"/>
+</p>
+<p align="center">
+    <img src="https://i.snipboard.io/ex5pNh.jpg" alt="Task removed" width="400px"/>
+    <img src="https://i.snipboard.io/wuV5N8.jpg" alt="Task removed" width="400px"/>
 </p>
 
 ## Table of contents
