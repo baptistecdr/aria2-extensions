@@ -11,8 +11,6 @@ import path from 'path';
 const settings = new Settings(store);
 const downloader = new Downloader(settings);
 
-(async () => await downloader.connect())();
-
 let waitingDownload = 0;
 let stoppedDownload = 0;
 
@@ -86,7 +84,7 @@ async function getDownloads() {
                     download.eta = download.status !== 'active' ? null : download.downloadSpeed === '0' ? '∞' : toHHMMSS((download.totalLength - download.completedLength) / download.downloadSpeed);
                     download.percentage = Math.round(download.completedLength * 100 / download.totalLength) || 0;
                     download.style = download.status === 'complete' ? 'bg-success' : (download.status === 'waiting' || download.status === 'paused') ? 'bg-warning' : download.status === 'error' || download.status === 'removed' ? 'bg-danger' : '';
-                    download.color = download.percentage >= 50 ? 'text-white' : '';
+                    download.color = download.percentage >= 50 ? 'text-white' : 'text-dark';
                     downloads.result.push(download);
                 });
             });

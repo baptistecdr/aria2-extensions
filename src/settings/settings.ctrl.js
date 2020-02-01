@@ -52,16 +52,16 @@ function saveSettings() {
     });
 }
 
-$('#enable-capture').on('change',  (e) => {
-    if(e.target.checked) {
+$('#enable-capture').on('change', (e) => {
+    if (e.target.checked) {
         $('#form-enable-capture').removeAttr('disabled');
     } else {
         $('#form-enable-capture').prop('disabled', 'disabled');
     }
 });
 
-$('#enable-file-size').on('change',  (e) => {
-    if(e.target.checked) {
+$('#enable-file-size').on('change', (e) => {
+    if (e.target.checked) {
         $('#form-enable-file-size').removeAttr('disabled');
     } else {
         $('#form-enable-file-size').prop('disabled', 'disabled');

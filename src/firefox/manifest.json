@@ -1,6 +1,6 @@
 {
   "name": "Aria2c Integration",
-  "version": "2.0.8",
+  "version": "2.1.0",
   "manifest_version": 2,
   "description": "Download files with Aria2",
   "browser_specific_settings": {

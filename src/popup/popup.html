@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Aria2 Integration Popup</title>
@@ -13,9 +14,11 @@
             margin-bottom: 15px;
         }
     </style>
+    <link href="popup.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<div class="container-fluid">
+<div class="container-fluid scheme">
     <div class="row">
         <div class="col-8 text-left align-self-center" id="page-global-stat">
         </div>
@@ -23,11 +26,16 @@
                     ↓️ {{ downloadSpeed }} - ↑ {{ uploadSpeed }}
 
 
+
         </script>
         <div class="col-4 text-right align-self-center">
             <div class="btn-group" role="group">
-                <button class="btn btn-primary btn-sm" id="btn-show-add" type="button" data-localize="popup_add">Add</button>
-                <button class="btn btn-danger btn-sm" id="btn-purge" type="button" data-localize="popup_purge">Purge</button>
+                <button class="btn btn-primary btn-sm" id="btn-show-add" type="button"
+                        data-localize="popup_add">Add
+                </button>
+                <button class="btn btn-danger btn-sm" id="btn-purge" type="button"
+                        data-localize="popup_purge">Purge
+                </button>
             </div>
         </div>
     </div>
@@ -37,11 +45,14 @@
             <div class="col-12">
                 <form class="form-inline" id="form-add-urls-magnets">
                     <div class="input-group input-group-sm">
-                        <textarea type="text" class="form-control" style="min-height:31px;max-height: 100px"
-                                  placeholder="URLs and/or Magnets" id="tbx-urls-magnets"
-                                  aria-label="URLs and/or Magnets" aria-describedby="add_urls_magnets" data-localize="popup_add_links"></textarea>
+                            <textarea type="text" class="form-control" style="min-height:31px;max-height: 100px"
+                                      placeholder="URLs and/or Magnets" id="tbx-urls-magnets"
+                                      aria-label="URLs and/or Magnets"
+                                      aria-describedby="add_urls_magnets" data-localize="popup_add_links"></textarea>
                         <div class="input-group-append">
-                            <button type="button" class="btn btn-primary btn-sm" id="btn-add" data-localize="popup_add">Add</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="btn-add"
+                                    data-localize="popup_add">Add
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -52,11 +63,10 @@
                         <div class="custom-file">
                             <input type="file"
                                    accept="application/x-bittorrent, .torrent, application/metalink4+xml, application/metalink+xml, .meta4, .metalink"
-                                   multiple="multiple"
-                                   class="custom-file-input" id="input-torrents">
+                                   multiple="multiple" class="custom-file-input" id="input-torrents">
                             <label class="custom-file-label" style="font-size: 0.875rem;color: #6c757d"
-                                   for="input-torrents"
-                                   aria-describedby="chooseTorrentFiles" data-localize="popup_browse_files">Choose torrent and/or metalink files...</label>
+                                   for="input-torrents" aria-describedby="chooseTorrentFiles"
+                                   data-localize="popup_browse_files">Choose torrent and/or metalink files...</label>
                         </div>
                         <div class="input-group-append">
                             <button type="button" class="btn btn-primary btn-sm" style="height: 35px"
@@ -102,8 +112,10 @@
         </div>
         {{/result}}
 
+
     </script>
 </div>
 </body>
 <script src="popup.js"></script>
+
 </html>

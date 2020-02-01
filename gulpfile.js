@@ -48,9 +48,17 @@ function popupJs(directory) {
     return pipeline(gulp.src('src/popup/popup.js'), babel(), webpack(webpackConfig('popup.js')), gulp.dest(`dist/${directory}/popup/`));
 }
 
+function popupCss(directory) {
+    return pipeline(gulp.src(`src/${directory}/popup/popup.css`), htmlMinify(htmlMinifyConfig), gulp.dest(`dist/${directory}/popup/`));
+}
+
 function settingsJs(directory) {
     return pipeline(gulp.src('src/settings/settings.ctrl.js'), babel(), webpack(webpackConfig('settings.ctrl.js')),
         gulp.dest(`dist/${directory}/settings/`));
+}
+
+function settingsCss(directory) {
+    return pipeline(gulp.src(`src/${directory}/settings/settings.css`), htmlMinify(htmlMinifyConfig), gulp.dest(`dist/${directory}/settings/`));
 }
 
 function html(directory) {
@@ -90,16 +98,18 @@ const chromeHtml = () => html('chrome');
 const chromeLocales = () => locales('chrome');
 const chromeIcons = () => icons('chrome');
 const chromeSettingsJs = () => settingsJs('chrome');
+const chromeSettingsCss = () => settingsCss('chrome');
 const chromePopupJs = () => popupJs('chrome');
+const chromePopupCss = () => popupCss('chrome');
 const chromeCss = () => css('chrome');
 const chromeBackgroundJs = () => backgroundJs('chrome');
 const chromeInjectJs = () => injectJs('chrome');
 
 
-gulp.task("chrome", gulp.series(chromeManifest, chromeBackgroundJs, chromeHtml, chromeLocales, chromeIcons, chromeSettingsJs, chromePopupJs, chromeCss, chromeInjectJs));
-gulp.task("chrome:popup", gulp.series(chromeManifest, chromeHtml, chromeCss, chromeLocales, chromePopupJs));
+gulp.task("chrome", gulp.series(chromeManifest, chromeBackgroundJs, chromeHtml, chromeLocales, chromeIcons, chromeSettingsCss, chromeSettingsJs, chromePopupCss, chromePopupJs, chromeCss, chromeInjectJs));
+gulp.task("chrome:popup", gulp.series(chromeManifest, chromeHtml, chromeCss, chromeLocales, chromePopupCss, chromePopupJs));
 gulp.task("chrome:background", gulp.series(chromeManifest, chromeHtml, chromeCss, chromeLocales, chromeBackgroundJs));
-gulp.task("chrome:settings", gulp.series(chromeManifest, chromeHtml, chromeCss, chromeLocales, chromeSettingsJs));
+gulp.task("chrome:settings", gulp.series(chromeManifest, chromeHtml, chromeCss, chromeLocales, chromeSettingsCss, chromeSettingsJs));
 
 ///
 // Firefox
@@ -110,15 +120,17 @@ const firefoxHtml = () => html('firefox');
 const firefoxLocales = () => locales('firefox');
 const firefoxIcons = () => icons('firefox');
 const firefoxSettingsJs = () => settingsJs('firefox');
+const firefoxSettingsCss = () => settingsCss('firefox');
 const firefoxPopupJs = () => popupJs('firefox');
+const firefoxPopupCss = () => popupCss('firefox');
 const firefoxCss = () => css('firefox');
 const firefoxBackgroundJs = () => backgroundJs('firefox');
 const firefoxInjectJs = () => injectJs('firefox');
 
-gulp.task("firefox", gulp.series(firefoxManifest, firefoxBackgroundJs, firefoxHtml, firefoxLocales, firefoxIcons, firefoxSettingsJs, firefoxPopupJs, firefoxCss, firefoxInjectJs));
-gulp.task("firefox:popup", gulp.series(firefoxManifest, firefoxHtml, firefoxCss, firefoxLocales, firefoxPopupJs));
+gulp.task("firefox", gulp.series(firefoxManifest, firefoxBackgroundJs, firefoxHtml, firefoxLocales, firefoxIcons, firefoxSettingsCss, firefoxSettingsJs, firefoxPopupCss, firefoxPopupJs, firefoxCss, firefoxInjectJs));
+gulp.task("firefox:popup", gulp.series(firefoxManifest, firefoxHtml, firefoxCss, firefoxLocales, firefoxCss, firefoxPopupJs));
 gulp.task("firefox:background", gulp.series(firefoxManifest, firefoxHtml, firefoxCss, firefoxLocales, firefoxBackgroundJs));
-gulp.task("firefox:settings", gulp.series(firefoxManifest, firefoxHtml, firefoxCss, firefoxLocales, firefoxSettingsJs));
+gulp.task("firefox:settings", gulp.series(firefoxManifest, firefoxHtml, firefoxCss, firefoxLocales, firefoxSettingsCss, firefoxSettingsJs));
 
 ///
 // Main
