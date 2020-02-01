@@ -5,8 +5,6 @@ import {Downloader} from '../downloader/downloader';
 let settings = new Settings(store);
 let downloader = new Downloader(settings);
 
-(async () => await downloader.connect())();
-
 async function showNotification(message) {
     const options = {
         type: 'basic',
