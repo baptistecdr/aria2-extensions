@@ -28,7 +28,7 @@
     <img src="https://i.snipboard.io/Liwpn5.jpg" alt="Task finished" width="400px"/>
 </p>
 <p align="center">
-    <img src="https://i.snipboard.io/ex5pNh.jpg" alt="Task removed" width="400px"/>
+    <img src="https://i.snipboard.io/i1rm3z.jpg" alt="Task removed" width="400px"/>
     <img src="https://i.snipboard.io/wuV5N8.jpg" alt="Task removed" width="400px"/>
 </p>
 
