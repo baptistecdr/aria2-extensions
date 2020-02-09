@@ -49,7 +49,7 @@
     - You can add URLs, magnets links and torrent files. 
 
 ## Quick start
-- [Chrome Web Store]()
+- [Chrome Web Store](https://chrome.google.com/webstore/detail/aria2-integration/hnenidncmoeebipinjdfniagjnfjbapi)
 - [Firefox Extension Store](https://addons.mozilla.org/en-US/firefox/addon/aria2-extension/)
 
 ## How to build
