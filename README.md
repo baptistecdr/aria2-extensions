@@ -69,6 +69,10 @@ Contributions are welcome!
 
 ## Contributors
 
+## Confidentiality
+
+Cookies read are only transmitted to Aria2 instance. Be sure to use a secure connection between your computer and the instance.
+
 ## Thanks to
 - https://github.com/robbielj/chrome-aria2-integration
 - https://github.com/rahuliyer95/chrome-aria2-integration
