@@ -1,4 +1,4 @@
-<h3 align="center">Aria2c Integration</h3>
+<h3 align="center">Aria2 Integration</h3>
 <p align="center">
     Captures new download tasks and sends them to Aria2 automatically.
     <br>
