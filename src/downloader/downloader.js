@@ -104,9 +104,10 @@ export class Downloader {
                 reject(`Cannot parse '${file}'.`);
             };
             temporaryFileReader.onload = () => {
-                resolve(btoa(temporaryFileReader.result));
+                const splitResult = temporaryFileReader.result.split(new RegExp("[:;,]"));
+                resolve(splitResult[3]);
             };
-            temporaryFileReader.readAsBinaryString(file);
+            temporaryFileReader.readAsDataURL(file);
         });
     };
 
