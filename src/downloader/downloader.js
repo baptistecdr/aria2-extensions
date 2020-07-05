@@ -1,4 +1,5 @@
 import Aria2 from 'aria2';
+import path from "path";
 
 export class Downloader {
     constructor(settings) {
@@ -130,7 +131,10 @@ export class Downloader {
         if (item.filename.match(/\.torrent$|\.meta4$|\.metalink$/)) {
             return this.captureTorrentOrMetalink(item.url, item.filename);
         } else {
-            return this.addUri(item.url, {header: [`Referer: ${tab.url}`, `Cookie: ${cookies}`]});
+            return this.addUri(item.url, {
+                header: [`Referer: ${tab.url}`, `Cookie: ${cookies}`],
+                out: path.basename(item.filename)
+            });
         }
     }
 
