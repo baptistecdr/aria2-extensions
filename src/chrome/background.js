@@ -81,7 +81,8 @@ chrome.downloads.onDeterminingFilename.addListener(async downloadItem => {
         if (!settings.capture || !downloader.isCapture(downloadItem.totalBytes, tab.url, downloadItem.url, downloadItem.filename)) {
             return;
         }
-        await chrome.downloads.cancel(downloadItem.id);
+        chrome.downloads.cancel(downloadItem.id, null);
+        chrome.downloads.erase({"id": downloadItem.id}, null);
         const cookies = await getCookies(downloadItem.url);
         await downloader.captureDownloadFile(downloadItem, tab, cookies);
         await showNotificationSuccess();

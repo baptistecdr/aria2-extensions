@@ -80,6 +80,7 @@ browser.downloads.onCreated.addListener(async (downloadItem) => {
             return;
         }
         await browser.downloads.cancel(downloadItem.id);
+        await browser.downloads.erase({id: downloadItem.id});
         const cookies = await getCookies(downloadItem.url);
         await downloader.captureDownloadFile(downloadItem, tab, cookies);
         await showNotificationSuccess();
