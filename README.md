@@ -37,7 +37,7 @@
 - [How to build](#how-to-build)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
-- [Contibutors](#contributors)
+- [Contributors](#contributors)
 - [Thanks to](#thanks-to)
 
 ## Description
