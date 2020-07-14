@@ -1,0 +1,44 @@
+import Cocoa
+import SafariServices.SFSafariApplication
+
+class ViewController: NSViewController {
+    @IBOutlet weak var hostTextField: NSTextField!
+    @IBOutlet weak var secureCheckbox: NSButton!
+    @IBOutlet weak var portTextField: NSTextField!
+    @IBOutlet weak var secretTextField: NSSecureTextField!
+
+    var aria2Config = Aria2Config.load()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadConfiguration()
+    }
+
+    @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: "5G6LMK53EG") { error in
+            if let _ = error {
+            }
+        }
+    }
+
+    func loadConfiguration() {
+        self.hostTextField.stringValue = aria2Config.host
+        self.secureCheckbox.state = aria2Config.secure ? .on : .off
+        self.portTextField.stringValue = String(aria2Config.port)
+        self.secretTextField.stringValue = aria2Config.secret
+    }
+
+    @IBAction func saveConfiguration(_ sender: Any) {
+        if let port = UInt16(self.portTextField.stringValue) {
+            let newConfig = Aria2Config(
+                    host: self.hostTextField.stringValue,
+                    secure: self.secureCheckbox.state == .on,
+                    port: port,
+                    secret: self.secretTextField.stringValue
+            )
+            if newConfig.save() {
+                self.aria2Config = newConfig
+            }
+        }
+    }
+}
