@@ -1,6 +1,6 @@
 {
   "name": "aria2-extensions",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "Download files with aria2",
   "main": "background.js",
   "scripts": {
