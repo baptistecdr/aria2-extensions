@@ -143,7 +143,7 @@
                                 <rect key="frame" x="68" y="55" width="180" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Leave it blank if it is not specified" id="kSy-sQ-iEK">
-                                    <font key="font" metaFont="label" size="11"/>
+                                    <font key="font" metaFont="message" size="11"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -210,9 +210,9 @@ DQ
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="icon128" id="Hhb-TZ-Dhg"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
-                                <rect key="frame" x="191" y="188" width="99" height="16"/>
+                                <rect key="frame" x="191" y="188" width="105" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Aria Integration" id="S7v-7o-3vW">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Aria2 Integration" id="S7v-7o-3vW">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -233,6 +233,6 @@ DQ
         </scene>
     </scenes>
     <resources>
-        <image name="icon128" width="128" height="128"/>
+        <image name="icon128" width="96" height="96"/>
     </resources>
 </document>

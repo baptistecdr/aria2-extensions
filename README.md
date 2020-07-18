@@ -31,6 +31,14 @@
     <img src="https://i.snipboard.io/i1rm3z.jpg" alt="Task removed" width="400px"/>
     <img src="https://i.snipboard.io/wuV5N8.jpg" alt="Task removed" width="400px"/>
 </p>
+<p align="center">
+    <img src="https://i.snipboard.io/pkvBhL.jpg" alt="Aria2 Integration App" width="400px">
+    <img src="https://i.snipboard.io/Bk6xI2.jpg" alt="Aria2 Integration App" width="400px">
+</p>
+<p align="center">
+    <img src="https://i.snipboard.io/joBJmv.jpg" alt="Task finished Safari" width="400px">
+    <img src="https://i.snipboard.io/6Fajxw.jpg" alt="Task finished Safari" width="400px">  
+</p>
 
 ## Table of contents
 - [Quick start](#quick-start)
@@ -53,13 +61,19 @@
 - [Firefox Extension Store](https://addons.mozilla.org/en-US/firefox/addon/aria2-extension/)
 
 ## How to build
+### Chromium and Firefox
 - Install [Node.JS](https://nodejs.org/) LTS or current
 - Install [Gulp](https://gulpjs.com/)
 - Clone the project
+- Run `cd firefox-chromium`
 - Run `npm install`
 - Run `gulp` to build Chrome and Firefox extension
     - Run `gulp chrome` to build Chrome extension
     - Run `gulp firefox` to build Firefox extension
+
+### Safari
+- Open `safari/Aria2 Integration.xcodeproj` with XCode
+- Build & Run the project
 
 ## Bugs and feature requests
 Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/baptistecdr/aria2-extensions/issues/new).
