@@ -51,9 +51,9 @@
 			<key>Identifier</key>
 			<string>Button</string>
 			<key>Image</key>
-			<string>ToolbarItemIcon.pdf</string>
+			<string>icon128.png</string>
 			<key>Label</key>
-			<string>Your Button</string>
+			<string>Aria2 Integration</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
@@ -64,6 +64,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2020 baptistecdr. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>This is a Safari Extension. You should tell us what your extension does here.</string>
+	<string>Captures new download tasks and sends them to Aria2 automatically.</string>
 </dict>
 </plist>

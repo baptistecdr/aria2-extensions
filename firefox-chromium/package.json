@@ -14,10 +14,10 @@
     "type": "git"
   },
   "devDependencies": {
-    "@babel/core": "~7.10.4",
-    "@babel/plugin-transform-runtime": "~7.10.4",
+    "@babel/core": "~7.10.5",
+    "@babel/plugin-transform-runtime": "~7.10.5",
     "@babel/preset-env": "~7.10.4",
-    "@types/chrome": "~0.0.117",
+    "@types/chrome": "~0.0.120",
     "@types/firefox-webext-browser": "~78.0.0",
     "@types/jquery": "~3.5.0",
     "@types/jquery.validation": "~1.16.6",
@@ -33,12 +33,12 @@
     "gulp-watch": "~5.0.1",
     "mustache": "~4.0.1",
     "readable-stream": "~3.6.0",
-    "terser-webpack-plugin": "~3.0.6",
+    "terser-webpack-plugin": "~3.0.7",
     "webpack-stream": "~5.2.1",
     "node-sass": "~4.14.1"
   },
   "dependencies": {
-    "@babel/runtime": "~7.10.4",
+    "@babel/runtime": "~7.10.5",
     "aria2": "~4.1.0",
     "bootstrap": "~4.5.0",
     "jquery": "~3.5.1",

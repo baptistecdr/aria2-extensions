@@ -12,28 +12,72 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         return SafariExtensionViewController.shared
     }
 
+    func downloadTorrentOrMetalinkFile(link: String, referer: String, cookies: String, completionHandler: @escaping (Result<String, AFError>) -> ()) {
+        let headers: HTTPHeaders = [
+            "Referer": referer,
+            "Cookie": cookies
+        ]
+        AF.download(link, headers: headers).responseData { response in
+            switch response.result {
+            case (.success(let data)):
+                completionHandler(.success(data.base64EncodedString()))
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+
+    func handleLink(link: String, referer: String, cookies: String) {
+        if link ~= "^(https?:|ftps?:|magnet:)" {
+            let isTorrentFile = link ~= "\\.torrent$"
+            let isMetalinkFile = link ~= "\\.(metalink|meta4)$"
+            if isTorrentFile || isMetalinkFile {
+                downloadTorrentOrMetalinkFile(link: link, referer: referer, cookies: cookies) { result in
+                    switch result {
+                    case (.success(let data)):
+                        if isTorrentFile {
+                            self.aria2Client.addTorrent(torrent: data) {
+                                print($0)
+                            }
+                        } else {
+                            self.aria2Client.addMetalink(metalink: data) {
+                                print($0)
+                            }
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            } else {
+                self.aria2Client.addUri(uris: [link], referer: referer, cookies: cookies) {
+                    print($0)
+                }
+            }
+        }
+    }
+
     override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo: [String: Any]?) {
         if let userInfo = userInfo {
-            let selectedText = userInfo["selectedText"]!
+            let selectedText = userInfo["selectedText"] as! String
             let referer = userInfo["referer"] as! String
             let cookies = userInfo["cookies"] as! String
-            let link: String = userInfo["link"] as! String
-            let destination: DownloadRequest.Destination = { _, _ in
-                let documentsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
-                let fileURL = documentsURL.appendingPathComponent("test.torrent")
 
-                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+            selectedText.split(separator: "\n").forEach {
+                handleLink(link: String($0), referer: referer, cookies: cookies)
             }
-            let headers: HTTPHeaders = [
-                "Referer": referer,
-                "Cookie": cookies,
-                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15"
-            ]
-            
-            AF.download(link, headers: headers, to: destination).response { response in
-                debugPrint(response)
+            if let link = userInfo["link"] as? String {
+                handleLink(link: link, referer: referer, cookies: cookies)
             }
-
         }
+    }
+}
+
+extension String {
+    static func ~=(lhs: String, rhs: String) -> Bool {
+        guard let regex = try? NSRegularExpression(pattern: rhs) else {
+            return false
+        }
+        let range = NSRange(location: 0, length: lhs.utf16.count)
+        return regex.firstMatch(in: lhs, options: [], range: range) != nil
     }
 }
