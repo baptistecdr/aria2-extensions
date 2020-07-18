@@ -16,6 +16,7 @@ public class Aria2Parameters:Encodable {
     }
 }
 
+// http://yourfriendlyioscoder.com/blog/2019/04/27/any-encodable/
 public struct AnyEncodable: Encodable {
     let value: Encodable
 

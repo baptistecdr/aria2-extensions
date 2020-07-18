@@ -144,6 +144,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, NSTableVie
     }
 }
 
+// https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string
 extension StringProtocol {
     var firstUppercased: String {
         prefix(1).uppercased() + dropFirst()
