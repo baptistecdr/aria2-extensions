@@ -1,11 +1,16 @@
 import SafariServices
 import Alamofire
+import UserNotifications
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     let aria2Client = Aria2Client()
+    let notificationCenter = UNUserNotificationCenter.current()
 
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping (Bool, String) -> Void) {
         validationHandler(true, "")
+        self.notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in
+            // Nothing to do
+        }
     }
 
     override func popoverViewController() -> SFSafariExtensionViewController {
@@ -36,23 +41,51 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                     switch result {
                     case (.success(let data)):
                         if isTorrentFile {
-                            self.aria2Client.addTorrent(torrent: data) {
-                                print($0)
+                            self.aria2Client.addTorrent(torrent: data) { result in
+                                switch result {
+                                case (.success(_)):
+                                    self.showNotification(title: "Torrent added successfully", body: "The torrent file has been added to Aria2.")
+                                case (.failure(_)):
+                                    self.showNotification(title: "Failed to add torrent file", body: "An error occurred when adding the torrent file.")
+                                }
                             }
                         } else {
-                            self.aria2Client.addMetalink(metalink: data) {
-                                print($0)
+                            self.aria2Client.addMetalink(metalink: data) { _ in
+                                switch result {
+                                case (.success(_)):
+                                    self.showNotification(title: "Metalink added successfully", body: "The metalink file has been added to Aria2.")
+                                case (.failure(_)):
+                                    self.showNotification(title: "Failed to add metalink file", body: "An error occurred when adding the metalink file.")
+                                }
                             }
                         }
-                    case .failure(let error):
-                        print(error)
+                    case .failure(_):
+                        self.showNotification(title: "Failed to download the torrent/metalink file", body: "The torrent/metalink file could not be downloaded.")
                     }
                 }
             } else {
-                self.aria2Client.addUri(uris: [link], referer: referer, cookies: cookies) {
-                    print($0)
+                self.aria2Client.addUri(uris: [link], referer: referer, cookies: cookies) { result in
+                    switch result {
+                    case (.success(_)):
+                        self.showNotification(title: "Link added successfully", body: "The link has been added to Aria2.")
+                    case (.failure(_)):
+                        self.showNotification(title: "Failed to add link", body: "An error occurred when adding the link.")
+                    }
                 }
             }
+        }
+    }
+
+    func showNotification(title: String, body: String) {
+        self.notificationCenter.getNotificationSettings { settings in
+            guard (settings.authorizationStatus == .authorized) ||
+                  (settings.authorizationStatus == .provisional) else { return }
+            let content = UNMutableNotificationContent()
+            content.title = title
+            content.body = body
+            content.sound = .default
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+            self.notificationCenter.add(request)
         }
     }
 
