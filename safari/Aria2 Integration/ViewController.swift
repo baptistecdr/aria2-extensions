@@ -1,5 +1,6 @@
 import Cocoa
 import SafariServices.SFSafariApplication
+import UserNotifications
 
 class ViewController: NSViewController {
     @IBOutlet weak var hostTextField: NSTextField!
@@ -8,10 +9,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var secretTextField: NSSecureTextField!
 
     var aria2Config = Aria2Config.load()
+    let notificationCenter = UNUserNotificationCenter.current()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadConfiguration()
+        self.notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in
+            // Nothing to do
+        }
     }
 
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {

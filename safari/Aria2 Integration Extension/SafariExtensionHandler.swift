@@ -8,9 +8,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping (Bool, String) -> Void) {
         validationHandler(true, "")
-        self.notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in
-            // Nothing to do
-        }
     }
 
     override func popoverViewController() -> SFSafariExtensionViewController {
@@ -83,7 +80,9 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             let content = UNMutableNotificationContent()
             content.title = title
             content.body = body
-            content.sound = .default
+            if settings.soundSetting == .enabled {
+                content.sound = .default
+            }
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
             self.notificationCenter.add(request)
         }
