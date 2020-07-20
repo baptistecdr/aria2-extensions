@@ -20,9 +20,8 @@ class ViewController: NSViewController {
     }
 
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: "5G6LMK53EG") { error in
-            if let _ = error {
-            }
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: "bosp.Aria2-Integration-Extension") { _ in
+            // Nothing to do
         }
     }
 
