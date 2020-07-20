@@ -109,7 +109,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, NSTableVie
 
         let gid = task["gid"].stringValue
         let file = task["files"][0]
-        var filename = "Unknown"
+        var filename = ""
         if task["bittorrent"]["info"].exists() {
             filename = task["bittorrent"]["info"]["name"].stringValue
         } else {
