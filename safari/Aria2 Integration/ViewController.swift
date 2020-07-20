@@ -33,6 +33,9 @@ class ViewController: NSViewController {
     }
 
     @IBAction func saveConfiguration(_ sender: Any) {
+        let alert = NSAlert()
+        alert.messageText = "Could not save the configuration."
+        alert.alertStyle = .informational
         if let port = UInt16(self.portTextField.stringValue) {
             let newConfig = Aria2Config(
                     host: self.hostTextField.stringValue,
@@ -42,6 +45,16 @@ class ViewController: NSViewController {
             )
             if newConfig.save() {
                 self.aria2Config = newConfig
+            } else {
+                alert.informativeText = "An error occurred during saving. Try again."
+                alert.beginSheetModal(for: self.view.window!) { response in
+                    print(response)
+                }
+            }
+        } else {
+            alert.informativeText = "The specified port is invalid."
+            alert.beginSheetModal(for: self.view.window!) { response in
+                // Nothing to do
             }
         }
     }
