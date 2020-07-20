@@ -53,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D22A7A8A24C59028008B5AC8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		D22A7A8B24C59028008B5AC8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
 		D2894C1124BF0289009F05CC /* icon128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon128.png; path = "../../firefox-chromium/src/icons/icon128.png"; sourceTree = "<group>"; };
 		D2C64EFF24BAFB90005C8CBB /* Aria2Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aria2Client.swift; sourceTree = "<group>"; };
 		D2C64F0B24BB9D7A005C8CBB /* Aria2Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aria2Config.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = D2DB75A124B864E6004CBDB6;
 			packageReferences = (
@@ -302,6 +305,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D2DB75B224B864E6004CBDB6 /* Base */,
+				D22A7A8A24C59028008B5AC8 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -310,6 +314,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D2DB75CA24B864E7004CBDB6 /* Base */,
+				D22A7A8B24C59028008B5AC8 /* fr */,
 			);
 			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -381,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

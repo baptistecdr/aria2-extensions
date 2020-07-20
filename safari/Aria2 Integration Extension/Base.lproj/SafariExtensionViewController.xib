@@ -99,7 +99,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="357" id="VUF-cc-Gh6"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" allowsUndo="NO" alignment="left" title="63 connections, ↓️ 0 B/s - ↑ 0 B/s" id="6zU-iM-mxN">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" allowsUndo="NO" alignment="left" title="63 connections, ↓ 0 bytes/s - ↑ 0 bytes/s" id="6zU-iM-mxN">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
