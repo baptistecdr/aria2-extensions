@@ -1,6 +1,6 @@
 {
   "name": "Aria2 Integration",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "manifest_version": 2,
   "minimum_chrome_version": "70",
   "description": "Download files with Aria2",
@@ -24,8 +24,7 @@
     "downloads",
     "notifications",
     "storage",
-    "cookies",
-    "*://*/"
+    "cookies"
   ],
   "browser_action": {
     "default_icon": {
