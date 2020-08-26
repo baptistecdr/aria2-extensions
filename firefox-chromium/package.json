@@ -1,6 +1,6 @@
 {
   "name": "aria2-extensions",
-  "version": "2.1.9",
+  "version": "2.1.10",
   "description": "Download files with aria2",
   "main": "background.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "type": "git"
   },
   "devDependencies": {
-    "@babel/core": "~7.11.1",
+    "@babel/core": "~7.11.4",
     "@babel/plugin-transform-runtime": "~7.11.0",
     "@babel/preset-env": "~7.11.0",
     "@types/chrome": "~0.0.122",
