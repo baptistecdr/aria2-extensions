@@ -24,7 +24,9 @@ chrome.runtime.onInstalled.addListener((details) => {
         id: 'linkclick',
         contexts: ['link', 'selection']
     });
-    chrome.runtime.openOptionsPage();
+    if(details.reason === "install") {
+        chrome.runtime.openOptionsPage();
+    }
 });
 
 function showNotificationSuccess() {

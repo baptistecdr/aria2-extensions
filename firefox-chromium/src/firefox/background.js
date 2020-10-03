@@ -16,8 +16,10 @@ async function showNotification(message) {
     window.setTimeout(() => browser.notifications.clear('senttoaria2'), 3000);
 }
 
-browser.runtime.onInstalled.addListener(async () => {
-    await browser.runtime.openOptionsPage();
+browser.runtime.onInstalled.addListener(async (details) => {
+    if(details.reason === "install") {
+        await browser.runtime.openOptionsPage();
+    }
 });
 
 browser.menus.create({

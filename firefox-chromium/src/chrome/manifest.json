@@ -1,6 +1,6 @@
 {
   "name": "Aria2 Integration",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "manifest_version": 2,
   "minimum_chrome_version": "70",
   "description": "Download files with Aria2",
