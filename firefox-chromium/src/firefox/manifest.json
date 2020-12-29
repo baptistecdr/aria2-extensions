@@ -1,6 +1,6 @@
 {
   "name": "Aria2 Integration",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "manifest_version": 2,
   "description": "Download files with Aria2",
   "browser_specific_settings": {
@@ -29,7 +29,6 @@
     "tabs",
     "downloads",
     "notifications",
-    "storage",
     "cookies"
   ],
   "browser_action": {

@@ -1,6 +1,6 @@
 {
   "name": "aria2-extensions",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "description": "Download files with aria2",
   "main": "background.js",
   "scripts": {
@@ -14,12 +14,12 @@
     "type": "git"
   },
   "devDependencies": {
-    "@babel/core": "~7.11.6",
-    "@babel/plugin-transform-runtime": "~7.11.5",
-    "@babel/preset-env": "~7.11.5",
-    "@types/chrome": "~0.0.124",
-    "@types/firefox-webext-browser": "~78.0.1",
-    "@types/jquery": "~3.5.1",
+    "@babel/core": "~7.12.10",
+    "@babel/plugin-transform-runtime": "~7.12.10",
+    "@babel/preset-env": "~7.12.11",
+    "@types/chrome": "~0.0.127",
+    "@types/firefox-webext-browser": "~82.0.0",
+    "@types/jquery": "~3.5.5",
     "@types/jquery.validation": "~1.16.6",
     "@types/safari-extension": "~0.0.28",
     "@types/storejs": "~2.0.3",
@@ -31,16 +31,16 @@
     "gulp-json-minify": "~1.2.2",
     "gulp-sass": "~4.1.0",
     "gulp-watch": "~5.0.1",
-    "mustache": "~4.0.1",
+    "mustache": "~4.1.0",
     "readable-stream": "~3.6.0",
-    "terser-webpack-plugin": "~4.2.2",
-    "webpack-stream": "~6.1.0",
+    "terser-webpack-plugin": "~4.2.3",
+    "webpack-stream": "~6.1.1",
     "node-sass": "~4.14.1"
   },
   "dependencies": {
-    "@babel/runtime": "~7.11.2",
-    "aria2": "~4.1.0",
-    "bootstrap": "~4.5.2",
+    "@babel/runtime": "~7.12.5",
+    "aria2": "4.1.0",
+    "bootstrap": "~4.5.3",
     "jquery": "~3.5.1",
     "popper.js": "~1.16.1",
     "store": "~2.0.12"
