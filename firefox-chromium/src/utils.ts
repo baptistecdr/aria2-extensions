@@ -34,20 +34,18 @@ export class Utils {
     static servers(): IServer[] {
         const values = [] as IServer[];
         const keys = Object.keys(localStorage);
-        let i = keys.length;
 
-        while (i--) {
-            const server = localStorage.getItem(keys[i]);
+        keys.forEach(key => {
+            const server = localStorage.getItem(key);
             if (server != null) {
                 values.push(Server.fromJSON(server));
             }
-        }
+        });
         return values;
     }
 
     static async captureTorrentOrMetalink(aria2:any, url: string, filename: string) {
-        const res = await fetch(url);
-        const blob = await res.blob();
+        const blob = await Utils.download(url);
         const b64 = await Utils.encodeFileToBase64(blob);
         if (url.endsWith('.torrent') || filename.endsWith('.torrent')) {
             return aria2.call('aria2.addTorrent', b64);
