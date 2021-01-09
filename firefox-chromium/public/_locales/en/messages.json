@@ -30,6 +30,9 @@
   "addServerRemove": {
     "message": "Remove"
   },
+  "addServerInvalidFeedback": {
+    "message": "Please enter something."
+  },
   "serverAdd": {
     "message": "Add"
   },
@@ -80,5 +83,37 @@
   },
   "contextMenusTitle": {
     "message": "Downloads with Aria2"
+  },
+  "backgroundAddUrlSuccess": {
+    "message": "The URL has been sent to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "backgroundAddUrlError": {
+    "message": "An error occurred while adding a link to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "backgroundAddFileSuccess": {
+    "message": "The file has been sent to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "backgroundAddFileError": {
+    "message": "An error occurred while adding a file to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
   }
 }

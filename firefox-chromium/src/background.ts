@@ -11,7 +11,7 @@ async function showNotification(message: string) {
     const options: CreateNotificationOptions = {
         type: 'basic',
         title: 'Aria2',
-        iconUrl: 'icons/notificationicon.png',
+        iconUrl: 'icons/48.png',
         message: message
     };
     const id = await browser.notifications.create('', options);
@@ -77,14 +77,18 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
     if (info.linkUrl) {
         urls.push(info.linkUrl)
     } else if (info.selectionText) {
-        info.selectionText.split(/\s+/).forEach(url => urls.push(url))
+        info.selectionText.split(/\s+/).forEach(url => urls.push(url));
     }
     const referer = tab?.url ?? '';
     const cookies = await getCookies(referer);
-    urls.forEach(url => {
-        Utils.captureUrl(aria2, url, referer, cookies);
-        showNotification('')
-    });
+    for (const url of urls) {
+        try {
+            await Utils.captureUrl(aria2, url, referer, cookies);
+            await showNotification(browser.i18n.getMessage("backgroundAddUrlSuccess", aria2.name));
+        } catch (e) {
+            await showNotification(browser.i18n.getMessage('backgroundAddUrlError', aria2.name));
+        }
+    }
 });
 
 browser.downloads.onCreated.addListener(async (downloadItem) => {
@@ -92,9 +96,14 @@ browser.downloads.onCreated.addListener(async (downloadItem) => {
         const tab = await getCurrentTab();
         const referer = tab?.url ?? '';
         const cookies = await getCookies(referer);
-        await browser.downloads.cancel(downloadItem.id);
-        await browser.downloads.erase({id: downloadItem.id});
-        await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referer, cookies);
+        try {
+            await browser.downloads.cancel(downloadItem.id);
+            await browser.downloads.erase({id: downloadItem.id});
+            await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referer, cookies);
+            await showNotification(browser.i18n.getMessage("backgroundAddFileSuccess", connectionForCaptureDownloads.name));
+        } catch (e) {
+            await showNotification(browser.i18n.getMessage('backgroundAddFileError', connectionForCaptureDownloads.name));
+        }
     }
 });
 

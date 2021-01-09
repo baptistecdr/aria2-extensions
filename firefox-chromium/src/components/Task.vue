@@ -91,7 +91,7 @@ export default class Task extends Vue {
   get eta(): string {
     if (this.info.downloadSpeed !== '0') {
       const etaSeconds = (this.info.totalLength - this.info.completedLength) / this.info.downloadSpeed;
-      return this.toHHMMSS(etaSeconds.toString());
+      return this.formatEta(etaSeconds.toString());
     }
     return "";
   }
@@ -161,11 +161,11 @@ export default class Task extends Vue {
 
   formatTime(time:number): string {
     const str = time.toString();
-    const pad = "0";
+    const pad = "00";
     return pad.substring(0, pad.length - str.length) + str;
   }
 
-  toHHMMSS(sec: string): string {
+  formatEta(sec: string): string {
     let secNum = parseInt(sec, 10);
     let hours = Math.floor(secNum / 3600);
     let minutes = Math.floor((secNum - (hours * 3600)) / 60);

@@ -85,7 +85,7 @@ export default class AddServer extends Vue {
   private next: IServer = JSON.parse(JSON.stringify(this.current));
 
   get invalidFeedback(): string {
-    return 'Please enter something.';
+    return this.$i18n('addServerInvalidFeedback');
   }
 
   state(attr: string) {
