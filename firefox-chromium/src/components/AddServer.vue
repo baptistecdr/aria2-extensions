@@ -63,7 +63,8 @@
     </b-row>
     <b-row>
       <b-col cols="12">
-        <b-button variant="primary" class="mr-2" v-on:click="save" v-bind:disabled="!state(next.name) || !state(next.host)">
+        <b-button variant="primary" class="mr-2" v-on:click="save"
+                  v-bind:disabled="!state(next.name) || !state(next.host)">
           {{ $i18n('addServerSave') }}
         </b-button>
         <b-button variant="danger" v-on:click="remove">{{ $i18n('addServerRemove') }}</b-button>

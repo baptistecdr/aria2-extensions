@@ -27,7 +27,8 @@
                 v-else-if="this.isPaused">
         <b-icon-play></b-icon-play>
       </b-button>
-      <b-button variant="danger" size="sm" class="btn-right" v-on:click="remove">
+      <b-button variant="danger" size="sm" :class="isActive || isPaused || isWaiting ? 'btn-right' : ''"
+                v-on:click="remove">
         <b-icon-trash></b-icon-trash>
       </b-button>
     </b-col>
@@ -159,7 +160,7 @@ export default class Task extends Vue {
     }
   }
 
-  formatTime(time:number): string {
+  formatTime(time: number): string {
     const str = time.toString();
     const pad = "00";
     return pad.substring(0, pad.length - str.length) + str;

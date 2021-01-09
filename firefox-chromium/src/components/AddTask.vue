@@ -3,7 +3,8 @@
     <b-col cols="12">
       <b-form inline>
         <b-input-group size="sm">
-          <b-textarea v-model="links" :placeholder="$i18n('addTaskAddUriPlaceholder')" rows="5" no-resize trim></b-textarea>
+          <b-textarea v-model="links" :placeholder="$i18n('addTaskAddUriPlaceholder')" rows="5" no-resize
+                      trim></b-textarea>
           <b-input-group-append>
             <b-button variant="primary" size="sm" v-on:click="addUrlsOrMagnets">{{ $i18n('addTaskAdd') }}</b-button>
           </b-input-group-append>
@@ -20,7 +21,10 @@
               accept="application/x-bittorrent, .torrent, application/metalink4+xml, application/metalink+xml, .meta4, .metalink"
               multiple="multiple"></b-form-file>
           <b-input-group-append>
-            <b-button variant="primary" size="sm" class="btn-add" v-on:click="addFiles">{{ $i18n('addTaskAdd') }}</b-button>
+            <b-button variant="primary" size="sm" class="btn-add" v-on:click="addFiles">{{
+                $i18n('addTaskAdd')
+              }}
+            </b-button>
           </b-input-group-append>
         </b-input-group>
       </b-form>

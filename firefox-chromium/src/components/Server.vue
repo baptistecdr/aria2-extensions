@@ -1,13 +1,13 @@
 <template>
   <b-container>
     <b-row>
-      <b-col cols="7" align-self="left" class="text-left stats">
+      <b-col cols="7" align-self="baseline" class="text-left stats">
         <b-icon-arrow-down></b-icon-arrow-down>
         {{ downloadSpeed }} -
         <b-icon-arrow-up></b-icon-arrow-up>
         {{ uploadSpeed }}
       </b-col>
-      <b-col cols="5" align-self="right" class="text-right">
+      <b-col cols="5" align-self="baseline" class="text-right">
         <b-button variant="primary" size="sm" class="btn-left" v-on:click="togglePage">{{ addButtonLabel }}</b-button>
         <b-button variant="danger" size="sm" class="btn-right" v-on:click="purgeDownloadResult">{{ $i18n("serverPurge") }}</b-button>
       </b-col>

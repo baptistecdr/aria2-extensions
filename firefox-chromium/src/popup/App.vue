@@ -17,9 +17,9 @@ import Server from "@/components/Server.vue";
   components: {Server},
 })
 export default class App extends Vue {
-    servers(): IServer[] {
-      return Utils.servers();
-    }
+  servers(): IServer[] {
+    return Utils.servers();
+  }
 }
 </script>
 
