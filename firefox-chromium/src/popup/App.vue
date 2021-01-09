@@ -1,6 +1,6 @@
 <template>
   <b-tabs content-class="mt-3" v-if="servers().length !== 0" lazy>
-    <b-tab v-for="server in servers()" :title="server.name" v-bind:key="server.id">
+    <b-tab v-for="server in servers()" :title="server.name" v-bind:key="server.key">
       <server :config="server"/>
     </b-tab>
   </b-tabs>

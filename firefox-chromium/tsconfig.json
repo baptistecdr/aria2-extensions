@@ -16,7 +16,6 @@
     "types": [
       "webpack-env",
       "node",
-      "chrome",
       "firefox-webext-browser",
     ],
     "paths": {

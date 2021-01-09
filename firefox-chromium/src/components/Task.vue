@@ -7,10 +7,10 @@
         </b-col>
         <b-col cols="12" align-self="left" class="pl-4 text-left">
           {{ status }}, {{ completedLength }} / {{ totalLength }}
-          <span v-if="this.isActive">, ETA: {{ eta }}</span>
+          <span v-if="this.isActive">, {{ $i18n('taskEta') }}: {{ eta }}</span>
         </b-col>
         <b-col cols="12" align-self="left" class="pl-4 text-left" v-if="this.isActive">
-          {{ connections }} connection(s),
+          {{ connections }} {{ $i18n('taskConnections') }},
           <b-icon-arrow-down></b-icon-arrow-down>
           {{ downloadSpeed }} -
           <b-icon-arrow-up></b-icon-arrow-up>
@@ -64,7 +64,8 @@ export default class Task extends Vue {
   }
 
   get status(): string {
-    return this.info.status.charAt(0).toUpperCase() + this.info.status.slice(1);
+    const upperCaseStatus = this.info.status.charAt(0).toUpperCase() + this.info.status.slice(1);
+    return this.$i18n(`taskStatus${upperCaseStatus}`);
   }
 
   get connections(): number {

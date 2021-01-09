@@ -3,14 +3,12 @@
     <b-row>
       <b-col cols="12">
         <b-tabs content-class="m-3" lazy>
-          <add-server v-for="item in servers()" v-bind:key="item.id" :current="item" v-on:update="onUpdate"/>
+          <add-server v-for="server in servers()" v-bind:key="server.key" :current="server" v-on:update="onUpdate"/>
           <template #tabs-end>
             <b-nav-item role="presentation" @click.prevent="add" href="#"><b>+</b></b-nav-item>
           </template>
           <template #empty>
-            <div class="text-center text-muted">
-              There are no open tabs<br>
-              Open a new tab using the <b>+</b> button above.
+            <div class="text-center text-muted" v-html="$i18n('optionsNoServers')">
             </div>
           </template>
         </b-tabs>

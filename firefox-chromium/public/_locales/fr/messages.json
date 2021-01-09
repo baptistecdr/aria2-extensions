@@ -4,81 +4,81 @@
     "description": "Download files with Aria2"
   },
   "optionsNoServers": {
-    "message": "There are no servers<br>Create a new server using the <b>+</b> button above."
+    "message": "Il n'y a aucun serveur.<br>Créez-en un en cliquant sur le bouton <b>+</b> au dessus."
   },
   "addServerName": {
-    "message": "Name"
+    "message": "Nom"
   },
   "addServerHost": {
-    "message": "Host"
+    "message": "Hôte"
   },
   "addServerPort": {
     "message": "Port"
   },
   "addServerSecureConnection": {
-    "message": "Secure connection"
+    "message": "Connexion sécurisée"
   },
   "addServerSecret": {
     "message": "Secret"
   },
   "addServerCaptureDownloads": {
-    "message": "Capture downloads"
+    "message": "Capturer les téléchargements"
   },
   "addServerSave": {
-    "message": "Save"
+    "message": "Sauvegarder"
   },
   "addServerRemove": {
-    "message": "Remove"
+    "message": "Supprimer"
   },
   "serverAdd": {
-    "message": "Add"
+    "message": "Ajouter"
   },
   "serverCancel": {
-    "message": "Cancel"
+    "message": "Annuler"
   },
   "serverPurge": {
-    "message": "Purge"
+    "message": "Purger"
   },
   "serverNoTasks": {
-    "message": "This place is quiet, so quiet..."
+    "message": "Cet endroit est calme, si calme..."
   },
   "addTaskAddUriPlaceholder": {
-    "message": "URLs and/or magnets"
+    "message": "URLs et/ou magnets"
   },
   "addTaskAdd": {
-    "message": "Add"
+    "message": "Ajouter"
   },
   "addTaskAddFilesPlaceholder": {
-    "message": "Choose torrent and/or metalink files..."
+    "message": "Choisissez des fichiers torrent et/ou metalink..."
   },
   "addTaskAddFilesDropPlaceholder": {
-    "message": "Drop torrent and/or metalink files..."
+    "message": "Déposez des fichiers torrent et/ou metalink..."
   },
   "taskStatusActive": {
     "message": "Active"
   },
   "taskStatusComplete": {
-    "message": "Complete"
+    "message": "Complétée"
   },
   "taskStatusError": {
-    "message": "Error"
+    "message": "En erreur"
   },
   "taskStatusRemoved": {
-    "message": "Removed"
+    "message": "Supprimée"
   },
   "taskStatusWaiting": {
-    "message": "Waiting"
+    "message": "En attente"
   },
   "taskStatusPaused": {
-    "message": "Paused"
+    "message": "En pause"
   },
   "taskEta": {
-    "message": "ETA"
+    "message": "HAE"
   },
   "taskConnections": {
-    "message": "connection(s)"
+    "message": "connexion(s)"
   },
   "contextMenusTitle": {
-    "message": "Downloads with Aria2"
+    "message": "Télécharger avec Aria2"
   }
 }

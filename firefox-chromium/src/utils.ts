@@ -44,7 +44,7 @@ export class Utils {
         return values;
     }
 
-    static async captureTorrentOrMetalink(aria2:any, url: string, filename: string) {
+    static async captureTorrentOrMetalink(aria2: any, url: string, filename: string) {
         const blob = await Utils.download(url);
         const b64 = await Utils.encodeFileToBase64(blob);
         if (url.endsWith('.torrent') || filename.endsWith('.torrent')) {
@@ -53,7 +53,7 @@ export class Utils {
         return aria2.call('aria2.addMetalink', b64);
     }
 
-    static async captureDownloadItem(aria2: any, item: DownloadItem, referer: string, cookies: String) {
+    static async captureDownloadItem(aria2: any, item: DownloadItem, referer: string, cookies: string) {
         if (item.filename.match(/\.torrent$|\.meta4$|\.metalink$/)) {
             return Utils.captureTorrentOrMetalink(aria2, item.url, item.filename);
         }
@@ -61,14 +61,12 @@ export class Utils {
             header: [`Referer: ${referer}`, `Cookie: ${cookies}`],
             out: path.basename(item.filename)
         });
-
     }
 
     static async captureUrl(aria2: any, url: string, referer: string, cookies: string) {
         if (url.match(/\.torrent$|\.meta4$|\.metalink$/)) {
-            return this.captureTorrentOrMetalink(aria2, url, '');
-        } else {
-            return aria2.call('aria2.addUri', [url], {header: [`Referer: ${referer}`, `Cookie: ${cookies}`]});
+            return Utils.captureTorrentOrMetalink(aria2, url, '');
         }
+        return aria2.call('aria2.addUri', [url], {header: [`Referer: ${referer}`, `Cookie: ${cookies}`]});
     }
 }

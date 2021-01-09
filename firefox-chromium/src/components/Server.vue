@@ -1,15 +1,15 @@
 <template>
   <b-container>
     <b-row>
-      <b-col cols="8" align-self="left" class="text-left stats">
+      <b-col cols="7" align-self="left" class="text-left stats">
         <b-icon-arrow-down></b-icon-arrow-down>
         {{ downloadSpeed }} -
         <b-icon-arrow-up></b-icon-arrow-up>
         {{ uploadSpeed }}
       </b-col>
-      <b-col cols="4" align-self="right" class="text-right">
+      <b-col cols="5" align-self="right" class="text-right">
         <b-button variant="primary" size="sm" class="btn-left" v-on:click="togglePage">{{ addButtonLabel }}</b-button>
-        <b-button variant="danger" size="sm" class="btn-right" v-on:click="purgeDownloadResult">Purge</b-button>
+        <b-button variant="danger" size="sm" class="btn-right" v-on:click="purgeDownloadResult">{{ $i18n("serverPurge") }}</b-button>
       </b-col>
     </b-row>
     <hr class="mt-2 mb-2">
@@ -19,7 +19,7 @@
     <span v-else>
       <b-row v-if="tasks.length === 0">
         <b-col cols="12" class="font-italic">
-          This place is quiet, so quiet...
+          {{ $i18n('serverNoTasks') }}
         </b-col>
       </b-row>
       <task v-for="task in this.tasks" :gid="task.gid"
@@ -59,9 +59,9 @@ export default class Server extends Vue {
 
   get addButtonLabel(): string {
     if (this.showAddForm) {
-      return "Cancel";
+      return this.$i18n("serverCancel");
     }
-    return "Add";
+    return this.$i18n("serverAdd");
   }
 
   async created() {

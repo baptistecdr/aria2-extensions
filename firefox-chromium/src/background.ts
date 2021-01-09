@@ -1,23 +1,26 @@
-/*async function showNotification(message) {
-    const options = {
+import {Utils} from "@/utils";
+// @ts-ignore
+import Aria2 from "aria2";
+import CreateNotificationOptions = browser.notifications.CreateNotificationOptions;
+import Tab = browser.tabs.Tab;
+
+let connections: any = {};
+let connectionForCaptureDownloads: any = undefined;
+
+async function showNotification(message: string) {
+    const options: CreateNotificationOptions = {
         type: 'basic',
         title: 'Aria2',
         iconUrl: 'icons/notificationicon.png',
         message: message
     };
-    await browser.notifications.create('senttoaria2', options);
-    window.setTimeout(() => browser.notifications.clear('senttoaria2'), 3000);
-}*/
-
-import {Utils} from "@/utils";
-// @ts-ignore
-import Aria2 from "aria2";
-
-let connections: any = {};
+    const id = await browser.notifications.create('', options);
+    window.setTimeout(() => browser.notifications.clear(id), 3000);
+}
 
 function createContextMenus() {
     browser.contextMenus.create({
-        title: browser.i18n.getMessage('context_menus_title') || 'Download with Aria2',
+        title: browser.i18n.getMessage('contextMenusTitle'),
         id: 'linkclick',
         contexts: ['link', 'selection']
     });
@@ -26,10 +29,13 @@ function createContextMenus() {
         const id = browser.contextMenus.create({
             title: `${server.name}`,
             parentId: 'linkclick',
-            id: server.id,
+            id: server.key,
             contexts: ['link', 'selection']
         });
         connections[id] = new Aria2(server);
+        if (server.capture) {
+            connectionForCaptureDownloads = connections[id];
+        }
     }
 }
 
@@ -45,7 +51,7 @@ browser.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     createContextMenus();
 });
 
-async function getCurrentTab(): Promise<browser.tabs.Tab | undefined> {
+async function getCurrentTab(): Promise<Tab | undefined> {
     const tabs = await browser.tabs.query({
         'active': true,
         'currentWindow': true
@@ -65,33 +71,30 @@ async function getCookies(url: string): Promise<string> {
     }, '');
 }
 
-browser.contextMenus.onClicked.addListener((info, tab) => {
-    const aria2 = connections[0];
+browser.contextMenus.onClicked.addListener(async (info, tab) => {
+    const aria2 = connections[info.menuItemId]!;
     const urls = [];
     if (info.linkUrl) {
         urls.push(info.linkUrl)
     } else if (info.selectionText) {
         info.selectionText.split(/\s+/).forEach(url => urls.push(url))
     }
-    urls.forEach(async url => {
-        try {
-            const referer = tab?.url ?? '';
-            const cookies = await getCookies(url);
-            await Utils.captureUrl(aria2, url, referer, cookies);
-            //await showNotificationSuccess();
-        } catch (error) {
-            // await showNotificationError(url, error);
-        }
+    const referer = tab?.url ?? '';
+    const cookies = await getCookies(referer);
+    urls.forEach(url => {
+        Utils.captureUrl(aria2, url, referer, cookies);
+        showNotification('')
     });
 });
 
 browser.downloads.onCreated.addListener(async (downloadItem) => {
-    const tab = await getCurrentTab();
-    const referer = tab?.url ?? '';
-    await browser.downloads.cancel(downloadItem.id);
-    await browser.downloads.erase({id: downloadItem.id});
-    const cookies = await getCookies(referer);
-    const aria2 = connections[0];
-    await Utils.captureDownloadItem(aria2, downloadItem, referer, cookies);
+    if (connectionForCaptureDownloads !== undefined) {
+        const tab = await getCurrentTab();
+        const referer = tab?.url ?? '';
+        const cookies = await getCookies(referer);
+        await browser.downloads.cancel(downloadItem.id);
+        await browser.downloads.erase({id: downloadItem.id});
+        await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referer, cookies);
+    }
 });
 
