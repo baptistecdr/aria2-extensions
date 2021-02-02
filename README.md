@@ -61,15 +61,14 @@
 - [Firefox Extension Store](https://addons.mozilla.org/en-US/firefox/addon/aria2-extension/)
 
 ## How to build
-### Chromium and Firefox
-- Install [Node.JS](https://nodejs.org/) LTS or current
-- Install [Gulp](https://gulpjs.com/)
+### Firefox and Chromium
+- Install [Node.JS](https://nodejs.org/) LTS
 - Clone the project
 - Run `cd firefox-chromium`
 - Run `npm install`
-- Run `gulp` to build Chrome and Firefox extension
-    - Run `gulp chrome` to build Chrome extension
-    - Run `gulp firefox` to build Firefox extension
+- Run `npm run build` to build Firefox and Chromium extension
+    - Run `npm run serve` to build and hot-reloads for development
+    - Run `npm run lint` to lint and fixes files
 
 ### Safari
 - Open `safari/Aria2 Integration.xcodeproj` with XCode
@@ -90,3 +89,4 @@ Cookies read are only transmitted to Aria2 instance. Be sure to use a secure con
 ## Thanks to
 - https://github.com/robbielj/chrome-aria2-integration
 - https://github.com/rahuliyer95/chrome-aria2-integration
+- <div>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
