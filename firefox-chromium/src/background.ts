@@ -1,41 +1,76 @@
 import {Utils} from "@/utils";
 // @ts-ignore
 import Aria2 from "aria2";
-import CreateNotificationOptions = browser.notifications.CreateNotificationOptions;
-import Tab = browser.tabs.Tab;
+import {Server} from "@/models/server";
+import {Options} from "@/models/options";
+import DownloadItem = browser.downloads.DownloadItem;
 
-let connections: any = {};
+const CONTEXT_MENUS_PARENT_ID = "aria2-integration"
+
+const connections: any = {};
 let connectionForCaptureDownloads: any = undefined;
+let options = Options.new();
 
-async function showNotification(message: string) {
-    const options: CreateNotificationOptions = {
-        type: 'basic',
-        title: 'Aria2',
-        iconUrl: 'icons/48.png',
-        message: message
-    };
-    const id = await browser.notifications.create('', options);
-    window.setTimeout(() => browser.notifications.clear(id), 3000);
+(async () => await initConnections())();
+
+async function initConnections() {
+    options = await Utils.options();
+    for (const server of await Utils.servers()) {
+        connections[server.key] = new Aria2(server);
+        if (options.capture && options.server === server.key) {
+            connectionForCaptureDownloads = connections[server.key];
+        }
+    }
 }
 
-function createContextMenus() {
+browser.storage.onChanged.addListener(async (changes) => {
+    const keys = Object.keys(changes);
+    for (const key of keys) {
+        // Extension options
+        if (key === "options") {
+            options = Options.fromJSON(changes[key].newValue);
+        }
+        // New value
+        else if (changes[key].oldValue === undefined) {
+            const server = Server.fromJSON(changes[key].newValue);
+            browser.contextMenus.create({
+                title: `${server.name}`,
+                parentId: CONTEXT_MENUS_PARENT_ID,
+                id: server.key,
+                contexts: ['link', 'selection']
+            });
+            connections[server.key] = new Aria2(server);
+        }
+        // Remove
+        else if (changes[key].newValue === undefined) {
+            const server = Server.fromJSON(changes[key].oldValue);
+            await browser.contextMenus.remove(server.key);
+            delete connections[server.key];
+        }
+        // Update
+        else {
+            const server = Server.fromJSON(changes[key].newValue);
+            connections[server.key] = new Aria2(server);
+            await browser.contextMenus.update(server.key, {
+                title: `${server.name}`
+            });
+        }
+    }
+});
+
+async function createContextMenus() {
     browser.contextMenus.create({
         title: browser.i18n.getMessage('contextMenusTitle'),
-        id: 'linkclick',
+        id: CONTEXT_MENUS_PARENT_ID,
         contexts: ['link', 'selection']
     });
-    connections = {};
-    for (const server of Utils.servers()) {
-        const id = browser.contextMenus.create({
+    for (const server of await Utils.servers()) {
+        browser.contextMenus.create({
             title: `${server.name}`,
-            parentId: 'linkclick',
+            parentId: CONTEXT_MENUS_PARENT_ID,
             id: server.key,
             contexts: ['link', 'selection']
         });
-        connections[id] = new Aria2(server);
-        if (server.capture) {
-            connectionForCaptureDownloads = connections[id];
-        }
     }
 }
 
@@ -43,24 +78,9 @@ browser.runtime.onInstalled.addListener(async (details) => {
     if (details.reason === "install") {
         await browser.runtime.openOptionsPage();
     }
-    createContextMenus();
+    await createContextMenus();
+    options = await Utils.options();
 });
-
-browser.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-    await browser.contextMenus.removeAll();
-    createContextMenus();
-});
-
-async function getCurrentTab(): Promise<Tab | undefined> {
-    const tabs = await browser.tabs.query({
-        'active': true,
-        'currentWindow': true
-    });
-    if (tabs.length === 0) {
-        return undefined;
-    }
-    return tabs[0];
-}
 
 async function getCookies(url: string): Promise<string> {
     const cookies = await browser.cookies.getAll({
@@ -84,25 +104,39 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
     for (const url of urls) {
         try {
             await Utils.captureUrl(aria2, url, referer, cookies);
-            await showNotification(browser.i18n.getMessage("backgroundAddUrlSuccess", aria2.name));
+            await Utils.showNotification(browser.i18n.getMessage("addUrlSuccess", aria2.name));
         } catch (e) {
-            await showNotification(browser.i18n.getMessage('backgroundAddUrlError', aria2.name));
+            await Utils.showNotification(browser.i18n.getMessage('addUrlError', aria2.name));
         }
     }
 });
 
+function downloadItemMustBeCaptured(referrer: string, item: DownloadItem): boolean {
+    const protocolsRegExp = new RegExp(`^${options.excludedProtocols.map(p => `(${p})`).join("|^")}`);
+    const sitesRegExp = new RegExp(`${options.excludedSites.map(s => `(${s})`).join("|")}`);
+    const fileTypesRegExp = new RegExp(`${options.excludedFileTypes.join("$|")}$`);
+
+    // @ts-ignore
+    const url = item.finalUrl ?? item.url;
+
+    return !(options.excludedProtocols.length > 0 && protocolsRegExp.test(url))
+        || !(options.excludedSites.length > 0 && (sitesRegExp.test(referrer) || sitesRegExp.test(url)))
+        || !(options.excludedFileTypes.length > 0 && fileTypesRegExp.test(url))
+}
+
 browser.downloads.onCreated.addListener(async (downloadItem) => {
-    if (connectionForCaptureDownloads !== undefined) {
-        const tab = await getCurrentTab();
-        const referer = tab?.url ?? '';
-        const cookies = await getCookies(referer);
-        try {
-            await browser.downloads.cancel(downloadItem.id);
-            await browser.downloads.erase({id: downloadItem.id});
-            await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referer, cookies);
-            await showNotification(browser.i18n.getMessage("backgroundAddFileSuccess", connectionForCaptureDownloads.name));
-        } catch (e) {
-            await showNotification(browser.i18n.getMessage('backgroundAddFileError', connectionForCaptureDownloads.name));
+    if (connectionForCaptureDownloads !== undefined && options.capture) {
+        const referrer = downloadItem.referrer ?? "";
+        const cookies = await getCookies(referrer);
+        if (downloadItemMustBeCaptured(referrer, downloadItem)) {
+            try {
+                await browser.downloads.cancel(downloadItem.id);
+                await browser.downloads.erase({id: downloadItem.id});
+                await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referrer, cookies);
+                await Utils.showNotification(browser.i18n.getMessage("addFileSuccess", connectionForCaptureDownloads.name));
+            } catch {
+                await Utils.showNotification(browser.i18n.getMessage('addFileError', connectionForCaptureDownloads.name));
+            }
         }
     }
 });

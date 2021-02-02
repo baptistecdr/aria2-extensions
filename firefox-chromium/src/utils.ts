@@ -1,6 +1,8 @@
 import {IServer, Server} from "@/models/server";
 import path from "path";
 import DownloadItem = browser.downloads.DownloadItem;
+import CreateNotificationOptions = browser.notifications.CreateNotificationOptions;
+import {IOptions, Options} from "@/models/options";
 
 export class Utils {
     static encodeFileToBase64(file: File | Blob) {
@@ -31,17 +33,14 @@ export class Utils {
         return await res.blob();
     }
 
-    static servers(): IServer[] {
-        const values = [] as IServer[];
-        const keys = Object.keys(localStorage);
+    static async options(): Promise<IOptions> {
+        const res = await browser.storage.sync.get("options");
+        return res["options"] ? Options.fromJSON(res["options"]) : Options.new();
+    }
 
-        keys.forEach(key => {
-            const server = localStorage.getItem(key);
-            if (server != null) {
-                values.push(Server.fromJSON(server));
-            }
-        });
-        return values;
+    static async servers(): Promise<IServer[]> {
+        const result = await browser.storage.sync.get(undefined);
+        return Object.keys(result).filter(key => key !== "options").map(key => Server.fromJSON(result[key]));
     }
 
     static async captureTorrentOrMetalink(aria2: any, url: string, filename: string) {
@@ -54,12 +53,14 @@ export class Utils {
     }
 
     static async captureDownloadItem(aria2: any, item: DownloadItem, referer: string, cookies: string) {
-        if (item.filename.match(/\.torrent$|\.meta4$|\.metalink$/)) {
-            return Utils.captureTorrentOrMetalink(aria2, item.url, item.filename);
+        // @ts-ignore
+        const url = item.finalUrl ?? item.url; // finalUrl (Chrome), url (Firefox)
+        if (url.match(/\.torrent$|\.meta4$|\.metalink$/)) {
+            return Utils.captureTorrentOrMetalink(aria2, url, "");
         }
-        return aria2.call('aria2.addUri', [item.url], {
+        return aria2.call('aria2.addUri', [url], {
             header: [`Referer: ${referer}`, `Cookie: ${cookies}`],
-            out: path.basename(item.filename)
+            out: path.basename(url)
         });
     }
 
@@ -68,5 +69,16 @@ export class Utils {
             return Utils.captureTorrentOrMetalink(aria2, url, '');
         }
         return aria2.call('aria2.addUri', [url], {header: [`Referer: ${referer}`, `Cookie: ${cookies}`]});
+    }
+
+    static async showNotification(message: string) {
+        const options: CreateNotificationOptions = {
+            type: 'basic',
+            title: 'Aria2',
+            iconUrl: 'icons/icon80.png',
+            message: message
+        };
+        const id = await browser.notifications.create('', options);
+        window.setTimeout(() => browser.notifications.clear(id), 3000);
     }
 }

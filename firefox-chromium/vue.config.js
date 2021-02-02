@@ -17,13 +17,6 @@ module.exports = {
         background: {
           entry: 'src/background.ts'
         },
-        contentScripts: {
-          entries: {
-            'content-script': [
-              'src/content-scripts/content-script.ts'
-            ]
-          }
-        }
       }
     }
   }

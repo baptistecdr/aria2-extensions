@@ -1,6 +1,6 @@
 <template>
-  <b-tabs content-class="mt-3" v-if="servers().length !== 0" lazy>
-    <b-tab v-for="server in servers()" :title="server.name" v-bind:key="server.key">
+  <b-tabs content-class="pt-3" v-if="servers.length !== 0" lazy>
+    <b-tab v-for="server in servers" :title="server.name" v-bind:key="server.key">
       <server :config="server"/>
     </b-tab>
   </b-tabs>
@@ -8,7 +8,6 @@
 
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
-// eslint-disable-next-line no-unused-vars
 import {IServer} from "@/models/server";
 import {Utils} from "@/utils";
 import Server from "@/components/Server.vue";
@@ -17,8 +16,10 @@ import Server from "@/components/Server.vue";
   components: {Server},
 })
 export default class App extends Vue {
-  servers(): IServer[] {
-    return Utils.servers();
+  private servers: IServer[] = [];
+
+  async mounted() {
+    this.servers = await Utils.servers();
   }
 }
 </script>

@@ -1,37 +1,81 @@
 {
   "extName": {
-    "message": "Aria2 Integration",
-    "description": "Download files with Aria2"
+    "message": "Aria2 Integration"
+  },
+  "extDescription": {
+    "message": "Download files with Aria2"
   },
   "optionsNoServers": {
     "message": "There are no servers<br>Create a new server using the <b>+</b> button above."
   },
-  "addServerName": {
+  "serverOptionsSuccess": {
+    "message": "The options have been saved."
+  },
+  "serverOptionsError": {
+    "message": "An error occurred while saving options."
+  },
+  "serverOptionsName": {
     "message": "Name"
   },
-  "addServerHost": {
+  "serverOptionsHost": {
     "message": "Host"
   },
-  "addServerPort": {
+  "serverOptionsPort": {
     "message": "Port"
   },
-  "addServerSecureConnection": {
+  "serverOptionsSecureConnection": {
     "message": "Secure connection"
   },
-  "addServerSecret": {
+  "serverOptionsSecret": {
     "message": "Secret"
   },
-  "addServerCaptureDownloads": {
-    "message": "Capture downloads"
+  "serverOptionsSecretDescription": {
+    "message": "Leave it blank if is not specified."
   },
-  "addServerSave": {
+  "serverOptionsSave": {
     "message": "Save"
   },
-  "addServerRemove": {
+  "serverOptionsRemove": {
     "message": "Remove"
   },
-  "addServerInvalidFeedback": {
+  "serverOptionsInvalidFeedback": {
     "message": "Please enter something."
+  },
+  "extensionOptionsTitle": {
+    "message": "Options"
+  },
+  "extensionOptionsCaptureDownloads": {
+    "message": "Capture downloads"
+  },
+  "extensionOptionsServerToSendDownloads": {
+    "message": "Server to send downloads"
+  },
+  "extensionOptionsExcludeProtocols": {
+    "message": "Exclude Protocols"
+  },
+  "extensionOptionsExcludeProtocolsDescription": {
+    "message": "Leave it blank to capture files from any protocol."
+  },
+  "extensionOptionsExcludeProtocolsInformation": {
+    "message": "E.g: ftp, http, https"
+  },
+  "extensionOptionsExcludeSites": {
+    "message": "Exclude Sites"
+  },
+  "extensionOptionsExcludeSitesDescription": {
+    "message": "Leave it blank to capture files from any site."
+  },
+  "extensionOptionsExcludeSitesInformation": {
+    "message": "E.g: .*microsoft, google.com"
+  },
+  "extensionOptionsExcludeFileTypes": {
+    "message": "Exclude File Types"
+  },
+  "extensionOptionsExcludeFileTypesDescription": {
+    "message": "E.g: rar, zip"
+  },
+  "extensionOptionsExcludeFileTypesInformation": {
+    "message": "Leave it blank to capture files of any type."
   },
   "serverAdd": {
     "message": "Add"
@@ -84,7 +128,7 @@
   "contextMenusTitle": {
     "message": "Downloads with Aria2"
   },
-  "backgroundAddUrlSuccess": {
+  "addUrlSuccess": {
     "message": "The URL has been sent to $SERVER$.",
     "placeholders": {
       "server": {
@@ -92,7 +136,7 @@
       }
     }
   },
-  "backgroundAddUrlError": {
+  "addUrlError": {
     "message": "An error occurred while adding a link to $SERVER$.",
     "placeholders": {
       "server": {
@@ -100,7 +144,7 @@
       }
     }
   },
-  "backgroundAddFileSuccess": {
+  "addFileSuccess": {
     "message": "The file has been sent to $SERVER$.",
     "placeholders": {
       "server": {
@@ -108,7 +152,7 @@
       }
     }
   },
-  "backgroundAddFileError": {
+  "addFileError": {
     "message": "An error occurred while adding a file to $SERVER$.",
     "placeholders": {
       "server": {

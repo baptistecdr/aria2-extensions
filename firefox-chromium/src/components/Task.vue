@@ -2,14 +2,15 @@
   <b-row class="tasks mb-2">
     <b-col cols="9">
       <b-row>
-        <b-col cols="12" align-self="left" class="text-left text-truncate font-weight-bold">
+        <b-col cols="12" align-self="start" class="text-left text-truncate font-weight-bold">
           {{ filename }}
         </b-col>
-        <b-col cols="12" align-self="left" class="pl-4 text-left">
-          {{ status }}, {{ completedLength }} / {{ totalLength }}
-          <span v-if="this.isActive">, {{ $i18n('taskEta') }}: {{ eta }}</span>
+        <b-col cols="12" align-self="start" class="pl-4 text-left">
+          {{ status }}, {{ completedLength }} / {{ totalLength }}<span v-if="this.isActive">, {{
+            $i18n('taskEta')
+          }}: {{ eta }}</span>
         </b-col>
-        <b-col cols="12" align-self="left" class="pl-4 text-left" v-if="this.isActive">
+        <b-col cols="12" align-self="start" class="pl-4 text-left" v-if="this.isActive">
           {{ connections }} {{ $i18n('taskConnections') }},
           <b-icon-arrow-down></b-icon-arrow-down>
           {{ downloadSpeed }} -
@@ -18,7 +19,7 @@
         </b-col>
       </b-row>
     </b-col>
-    <b-col cols="3" align-self="right" class="text-right">
+    <b-col cols="3" align-self="start" class="text-right">
       <b-button variant="primary" size="sm" class="btn-left" v-on:click="pause"
                 v-if="this.isActive || this.isWaiting">
         <b-icon-pause></b-icon-pause>
@@ -32,7 +33,7 @@
         <b-icon-trash></b-icon-trash>
       </b-button>
     </b-col>
-    <b-col cols="12" align-self="left" class="pl-4">
+    <b-col cols="12" align-self="start" class="pl-4">
       <b-progress :max="100" class="position-relative">
         <b-progress-bar :value="progress"
                         :style="progressLabelColor"
@@ -94,7 +95,7 @@ export default class Task extends Vue {
       const etaSeconds = (this.info.totalLength - this.info.completedLength) / this.info.downloadSpeed;
       return this.formatEta(etaSeconds.toString());
     }
-    return "";
+    return "∞";
   }
 
   get progress(): number {
