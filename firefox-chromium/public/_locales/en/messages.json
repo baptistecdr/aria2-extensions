@@ -107,6 +107,9 @@
   "addTaskAddFilesDropPlaceholder": {
     "message": "Drop torrent and/or metalink files..."
   },
+  "addTaskAddFilesBrowse": {
+    "message": "Browse"
+  },
   "taskStatusActive": {
     "message": "Active"
   },

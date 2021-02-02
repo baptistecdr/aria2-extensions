@@ -114,9 +114,4 @@ export default class ServerOptions extends Vue {
 </script>
 
 <style scoped>
-@media (prefers-color-scheme: dark) {
-  .text-muted {
-    color: #B1B1B3 !important;
-  }
-}
 </style>

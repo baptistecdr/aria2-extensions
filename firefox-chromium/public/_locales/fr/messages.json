@@ -107,6 +107,9 @@
   "addTaskAddFilesDropPlaceholder": {
     "message": "Déposez des fichiers torrent et/ou metalink..."
   },
+  "addTaskAddFilesBrowse": {
+    "message": "Parcourir"
+  },
   "taskStatusActive": {
     "message": "Active"
   },

@@ -174,11 +174,5 @@ export default class ExtensionOptions extends Vue {
   }
 }
 </script>
-
 <style scoped>
-@media (prefers-color-scheme: dark) {
-  .form-control::placeholder, .form-control::-moz-placeholder, .form-control::placeholder, .text-muted {
-    color: red !important;
-  }
-}
 </style>

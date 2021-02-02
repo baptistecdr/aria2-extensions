@@ -29,6 +29,12 @@ export default class App extends Vue {
 </script>
 
 <style>
+body {
+  width: 500px;
+  height: 100%;
+  padding: 15px;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: #FFF !important;
@@ -49,18 +55,29 @@ export default class App extends Vue {
     border-color: #343638 !important;
   }
 
-  .form-control::-moz-placeholder {
+  .form-control::-moz-placeholder, .form-control::placeholder, textarea::placeholder {
     color: #B1B1B3 !important;
   }
 
-  .form-control::placeholder {
+  .custom-file-label {
+    background-color: #4A4A4F !important;
+    border-color: #38383D !important;
     color: #B1B1B3 !important;
+    opacity: 1 !important;
+    font-size: small !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .custom-file-label:focus {
+    background-color: #4A4A4F !important;
+    border-color: #0A84FF !important;
+    color: #B1B1B3 !important;
+  }
+
+  .progress {
+    background-color: #F2F2F2 !important;
   }
 }
 
-body {
-  width: 500px;
-  height: 100%;
-  padding: 15px;
-}
 </style>

@@ -18,6 +18,7 @@
               v-model="files"
               :placeholder="$i18n('addTaskAddFilesPlaceholder')"
               :drop-placeholder="$i18n('addTaskAddFilesDropPlaceholder')"
+              :browse-text="$i18n('addTaskAddFilesBrowse')"
               accept="application/x-bittorrent, .torrent, application/metalink4+xml, application/metalink+xml, .meta4, .metalink"
               multiple="multiple"></b-form-file>
           <b-input-group-append>
@@ -77,6 +78,6 @@ export default class AddTask extends Vue {
 
 <style scoped>
 .btn-add {
-  height: 31px;
+  height: 30px;
 }
 </style>

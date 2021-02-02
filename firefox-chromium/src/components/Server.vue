@@ -38,7 +38,6 @@ import Task from "./Task.vue";
 import Aria2 from 'aria2';
 import filesize from 'filesize';
 import AddTask from "./AddTask.vue";
-// eslint-disable-next-line no-unused-vars
 import {IServer} from "@/models/server";
 
 @Component({
