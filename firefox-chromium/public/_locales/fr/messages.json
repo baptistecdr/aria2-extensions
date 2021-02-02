@@ -57,7 +57,7 @@
     "message": "Laissez le champ vide pour capturer depuis n'importe quel type de protocole."
   },
   "extensionOptionsExcludeProtocolsInformation": {
-    "message": "Ex. : ftp, http, https"
+    "message": "ftp, http, https"
   },
   "extensionOptionsExcludeSites": {
     "message": "Exclure des sites"
@@ -66,7 +66,7 @@
     "message": "Laissez le champ vide pour capturer depuis n'importe quel site."
   },
   "extensionOptionsExcludeSitesInformation": {
-    "message": "Ex. : .*microsoft, google.com"
+    "message": ".*microsoft, google.com"
   },
   "extensionOptionsExcludeFileTypes": {
     "message": "Exclure des extensions de fichier"
@@ -75,7 +75,13 @@
     "message": "Laissez le champ vide pour capturer n'importe quel type de fichier."
   },
   "extensionOptionsExcludeFileTypesInformation": {
-    "message": "Ex : rar, zip"
+    "message": "rar, zip"
+  },
+  "popupNoServerFound1": {
+    "message": "Aucun serveur n'a été trouvé."
+  },
+  "popupNoServerFound2": {
+    "message": "Ajoutez-en dans les préférences de l'extension."
   },
   "serverAdd": {
     "message": "Ajouter"

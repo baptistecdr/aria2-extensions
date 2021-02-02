@@ -57,7 +57,7 @@
     "message": "Leave it blank to capture files from any protocol."
   },
   "extensionOptionsExcludeProtocolsInformation": {
-    "message": "E.g: ftp, http, https"
+    "message": "ftp, http, https"
   },
   "extensionOptionsExcludeSites": {
     "message": "Exclude Sites"
@@ -66,16 +66,22 @@
     "message": "Leave it blank to capture files from any site."
   },
   "extensionOptionsExcludeSitesInformation": {
-    "message": "E.g: .*microsoft, google.com"
+    "message": ".*microsoft, google.com"
   },
   "extensionOptionsExcludeFileTypes": {
     "message": "Exclude File Types"
   },
   "extensionOptionsExcludeFileTypesDescription": {
-    "message": "E.g: rar, zip"
+    "message": "rar, zip"
   },
   "extensionOptionsExcludeFileTypesInformation": {
     "message": "Leave it blank to capture files of any type."
+  },
+  "popupNoServerFound1": {
+    "message": "No server was found."
+  },
+  "popupNoServerFound2": {
+    "message": "Add them in the extension preferences."
   },
   "serverAdd": {
     "message": "Add"

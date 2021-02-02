@@ -40,8 +40,7 @@
             :label="$i18n('extensionOptionsExcludeProtocols')"
             :description="$i18n('extensionOptionsExcludeProtocolsDescription')"
             label-for="capture-downloads-server">
-          <b-textarea v-model="excludedProtocols" :disabled="!options.capture" no-resize trim></b-textarea>
-          <b-form-text>{{ $i18n('extensionOptionsExcludeProtocolsInformation') }}</b-form-text>
+          <b-textarea v-model="excludedProtocols" :placeholder="$i18n('extensionOptionsExcludeProtocolsInformation')" :disabled="!options.capture" no-resize trim></b-textarea>
         </b-form-group>
       </b-col>
     </b-row>
@@ -53,8 +52,7 @@
             :label="$i18n('extensionOptionsExcludeSites')"
             :description="$i18n('extensionOptionsExcludeSitesDescription')"
             label-for="capture-downloads-server">
-          <b-textarea v-model="excludedSites" :disabled="!options.capture" no-resize trim></b-textarea>
-          <b-form-text>{{ $i18n('extensionOptionsExcludeSitesInformation') }}</b-form-text>
+          <b-textarea v-model="excludedSites" :placeholder="$i18n('extensionOptionsExcludeSitesInformation')" :disabled="!options.capture" no-resize trim></b-textarea>
         </b-form-group>
       </b-col>
     </b-row>
@@ -66,8 +64,7 @@
             :label="$i18n('extensionOptionsExcludeFileTypes')"
             :description="$i18n('extensionOptionsExcludeFileTypesDescription')"
             label-for="capture-downloads-server">
-          <b-textarea v-model="excludedFileTypes" :disabled="!options.capture" no-resize trim></b-textarea>
-          <b-form-text>{{ $i18n('extensionOptionsExcludeFileTypesInformation') }}</b-form-text>
+          <b-textarea v-model="excludedFileTypes" :placeholder="$i18n('extensionOptionsExcludeFileTypesInformation')" :disabled="!options.capture" no-resize trim></b-textarea>
         </b-form-group>
       </b-col>
     </b-row>
@@ -179,5 +176,9 @@ export default class ExtensionOptions extends Vue {
 </script>
 
 <style scoped>
-
+@media (prefers-color-scheme: dark) {
+  .form-control::placeholder, .form-control::-moz-placeholder, .form-control::placeholder, .text-muted {
+    color: red !important;
+  }
+}
 </style>

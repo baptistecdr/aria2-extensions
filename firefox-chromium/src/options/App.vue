@@ -48,4 +48,27 @@ export default class App extends Vue {
 }
 </script>
 <style>
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #FFF !important;
+    background-color: #202023 !important;
+  }
+  hr {
+    background-color: #343638 !important;
+  }
+
+  .nav-tabs {
+    border-color: #343638 !important;
+  }
+
+  .nav-link.active, .nav-link:hover, .nav-link:focus, .form-control, select {
+    color: #FFF !important;
+    background-color: #202023 !important;
+    border-color: #343638 !important;
+  }
+
+  .form-control::placeholder, .form-control::-moz-placeholder, .form-control::placeholder, .text-muted {
+    color: #909092 !important;
+  }
+}
 </style>

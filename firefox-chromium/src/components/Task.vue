@@ -191,4 +191,8 @@ export default class Task extends Vue {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+.progress {
+  background-color: #F2F2F2!important;
+}
 </style>
