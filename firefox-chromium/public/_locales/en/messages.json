@@ -1,0 +1,169 @@
+{
+  "extName": {
+    "message": "Aria2 Integration"
+  },
+  "extDescription": {
+    "message": "Download files with Aria2"
+  },
+  "optionsNoServers": {
+    "message": "There are no servers<br>Create a new server using the <b>+</b> button above."
+  },
+  "serverOptionsSuccess": {
+    "message": "The options have been saved."
+  },
+  "serverOptionsError": {
+    "message": "An error occurred while saving options."
+  },
+  "serverOptionsName": {
+    "message": "Name"
+  },
+  "serverOptionsHost": {
+    "message": "Host"
+  },
+  "serverOptionsPort": {
+    "message": "Port"
+  },
+  "serverOptionsSecureConnection": {
+    "message": "Secure connection"
+  },
+  "serverOptionsSecret": {
+    "message": "Secret"
+  },
+  "serverOptionsSecretDescription": {
+    "message": "Leave it blank if is not specified."
+  },
+  "serverOptionsSave": {
+    "message": "Save"
+  },
+  "serverOptionsRemove": {
+    "message": "Remove"
+  },
+  "serverOptionsInvalidFeedback": {
+    "message": "Please enter something."
+  },
+  "extensionOptionsTitle": {
+    "message": "Options"
+  },
+  "extensionOptionsCaptureDownloads": {
+    "message": "Capture downloads"
+  },
+  "extensionOptionsServerToSendDownloads": {
+    "message": "Server to send downloads"
+  },
+  "extensionOptionsExcludeProtocols": {
+    "message": "Exclude Protocols"
+  },
+  "extensionOptionsExcludeProtocolsDescription": {
+    "message": "Leave it blank to capture files from any protocol."
+  },
+  "extensionOptionsExcludeProtocolsInformation": {
+    "message": "ftp, http, https"
+  },
+  "extensionOptionsExcludeSites": {
+    "message": "Exclude Sites"
+  },
+  "extensionOptionsExcludeSitesDescription": {
+    "message": "Leave it blank to capture files from any site."
+  },
+  "extensionOptionsExcludeSitesInformation": {
+    "message": ".*microsoft, google.com"
+  },
+  "extensionOptionsExcludeFileTypes": {
+    "message": "Exclude File Types"
+  },
+  "extensionOptionsExcludeFileTypesDescription": {
+    "message": "rar, zip"
+  },
+  "extensionOptionsExcludeFileTypesInformation": {
+    "message": "Leave it blank to capture files of any type."
+  },
+  "popupNoServerFound1": {
+    "message": "No server was found."
+  },
+  "popupNoServerFound2": {
+    "message": "Add them in the extension preferences."
+  },
+  "serverAdd": {
+    "message": "Add"
+  },
+  "serverCancel": {
+    "message": "Cancel"
+  },
+  "serverPurge": {
+    "message": "Purge"
+  },
+  "serverNoTasks": {
+    "message": "This place is quiet, so quiet..."
+  },
+  "addTaskAddUriPlaceholder": {
+    "message": "URLs and/or magnets"
+  },
+  "addTaskAdd": {
+    "message": "Add"
+  },
+  "addTaskAddFilesPlaceholder": {
+    "message": "Choose torrent and/or metalink files..."
+  },
+  "addTaskAddFilesDropPlaceholder": {
+    "message": "Drop torrent and/or metalink files..."
+  },
+  "taskStatusActive": {
+    "message": "Active"
+  },
+  "taskStatusComplete": {
+    "message": "Complete"
+  },
+  "taskStatusError": {
+    "message": "Error"
+  },
+  "taskStatusRemoved": {
+    "message": "Removed"
+  },
+  "taskStatusWaiting": {
+    "message": "Waiting"
+  },
+  "taskStatusPaused": {
+    "message": "Paused"
+  },
+  "taskEta": {
+    "message": "ETA"
+  },
+  "taskConnections": {
+    "message": "connection(s)"
+  },
+  "contextMenusTitle": {
+    "message": "Downloads with Aria2"
+  },
+  "addUrlSuccess": {
+    "message": "The URL has been sent to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "addUrlError": {
+    "message": "An error occurred while adding a link to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "addFileSuccess": {
+    "message": "The file has been sent to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "addFileError": {
+    "message": "An error occurred while adding a file to $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@ if(process.argv.length <= 2) {
     process.exit();
 }
 const version = process.argv[2];
-const filesToUpdate = ["package.json", "src/chrome/manifest.json", "src/firefox/manifest.json"];
+const filesToUpdate = ["package.json", "src/manifest.json"];
 
 filesToUpdate.forEach(file => {
     fs.readFile(file, 'utf8', (err, data) => {
@@ -23,4 +23,3 @@ filesToUpdate.forEach(file => {
         }
     });
 });
-

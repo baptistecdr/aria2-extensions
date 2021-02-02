@@ -113,7 +113,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, NSTableVie
         if task["bittorrent"]["info"].exists() {
             filename = task["bittorrent"]["info"]["name"].stringValue
         } else {
-            filename = URL(string: file["path"].stringValue.replacingOccurrences(of: " ", with: "%20"))!.lastPathComponent
+            let filenameEncodedURL = file["path"].stringValue.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+            filename = URL(string: filenameEncodedURL)!.lastPathComponent
         }
         let fileCompletedLength = formatSpeed(speed: file["completedLength"].stringValue)
         let fileLength = formatSpeed(speed: file["length"].stringValue)

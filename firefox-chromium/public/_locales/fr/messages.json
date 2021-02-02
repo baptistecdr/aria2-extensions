@@ -1,0 +1,169 @@
+{
+  "extName": {
+    "message": "Aria2 Integration"
+  },
+  "extDescription": {
+    "message": "Télécharger des fichiers avec Aria2"
+  },
+  "optionsNoServers": {
+    "message": "Il n'y a aucun serveur.<br>Créez-en un en cliquant sur le bouton <b>+</b> au dessus."
+  },
+  "serverOptionsSuccess": {
+    "message": "Les options ont été sauvegardées."
+  },
+  "serverOptionsError": {
+    "message": "Une erreur est survenue durant la sauvegarde des options."
+  },
+  "serverOptionsName": {
+    "message": "Nom"
+  },
+  "serverOptionsHost": {
+    "message": "Hôte"
+  },
+  "serverOptionsPort": {
+    "message": "Port"
+  },
+  "serverOptionsSecureConnection": {
+    "message": "Connexion sécurisée"
+  },
+  "serverOptionsSecret": {
+    "message": "Secret"
+  },
+  "serverOptionsSecretDescription": {
+    "message": "Laissez le champ vide si ce n'est pas précisé."
+  },
+  "serverOptionsSave": {
+    "message": "Sauvegarder"
+  },
+  "serverOptionsRemove": {
+    "message": "Supprimer"
+  },
+  "serverOptionsInvalidFeedback": {
+    "message": "Veuillez saisir quelque chose."
+  },
+  "extensionOptionsTitle": {
+    "message": "Options"
+  },
+  "extensionOptionsCaptureDownloads": {
+    "message": "Capturer les téléchargements"
+  },
+  "extensionOptionsServerToSendDownloads": {
+    "message": "Serveur sur lequel envoyer les téléchargements"
+  },
+  "extensionOptionsExcludeProtocols": {
+    "message": "Exclure des protocoles"
+  },
+  "extensionOptionsExcludeProtocolsDescription": {
+    "message": "Laissez le champ vide pour capturer depuis n'importe quel type de protocole."
+  },
+  "extensionOptionsExcludeProtocolsInformation": {
+    "message": "ftp, http, https"
+  },
+  "extensionOptionsExcludeSites": {
+    "message": "Exclure des sites"
+  },
+  "extensionOptionsExcludeSitesDescription": {
+    "message": "Laissez le champ vide pour capturer depuis n'importe quel site."
+  },
+  "extensionOptionsExcludeSitesInformation": {
+    "message": ".*microsoft, google.com"
+  },
+  "extensionOptionsExcludeFileTypes": {
+    "message": "Exclure des extensions de fichier"
+  },
+  "extensionOptionsExcludeFileTypesDescription": {
+    "message": "Laissez le champ vide pour capturer n'importe quel type de fichier."
+  },
+  "extensionOptionsExcludeFileTypesInformation": {
+    "message": "rar, zip"
+  },
+  "popupNoServerFound1": {
+    "message": "Aucun serveur n'a été trouvé."
+  },
+  "popupNoServerFound2": {
+    "message": "Ajoutez-en dans les préférences de l'extension."
+  },
+  "serverAdd": {
+    "message": "Ajouter"
+  },
+  "serverCancel": {
+    "message": "Annuler"
+  },
+  "serverPurge": {
+    "message": "Purger"
+  },
+  "serverNoTasks": {
+    "message": "Cet endroit est calme, très calme..."
+  },
+  "addTaskAddUriPlaceholder": {
+    "message": "URLs et/ou magnets"
+  },
+  "addTaskAdd": {
+    "message": "Ajouter"
+  },
+  "addTaskAddFilesPlaceholder": {
+    "message": "Choisissez des fichiers torrent et/ou metalink..."
+  },
+  "addTaskAddFilesDropPlaceholder": {
+    "message": "Déposez des fichiers torrent et/ou metalink..."
+  },
+  "taskStatusActive": {
+    "message": "Active"
+  },
+  "taskStatusComplete": {
+    "message": "Complétée"
+  },
+  "taskStatusError": {
+    "message": "En erreur"
+  },
+  "taskStatusRemoved": {
+    "message": "Supprimée"
+  },
+  "taskStatusWaiting": {
+    "message": "En attente"
+  },
+  "taskStatusPaused": {
+    "message": "En pause"
+  },
+  "taskEta": {
+    "message": "HAE"
+  },
+  "taskConnections": {
+    "message": "connexion(s)"
+  },
+  "contextMenusTitle": {
+    "message": "Télécharger avec Aria2"
+  },
+  "addUrlSuccess": {
+    "message": "L'URL a été envoyé à $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "addUrlError": {
+    "message": "Une erreur s'est produite lors de l'ajout d'un lien à $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "addFileSuccess": {
+    "message": "Le fichier a été envoyé à $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  },
+  "addFileError": {
+    "message": "Une erreur s'est produite lors de l'ajout d'un fichier à $SERVER$.",
+    "placeholders": {
+      "server": {
+        "content": "$1"
+      }
+    }
+  }
+}
