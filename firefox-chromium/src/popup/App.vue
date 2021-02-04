@@ -63,10 +63,6 @@ body {
     background-color: #4A4A4F !important;
     border-color: #38383D !important;
     color: #B1B1B3 !important;
-    opacity: 1 !important;
-    font-size: small !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
   }
 
   .custom-file-label:focus {
@@ -77,7 +73,23 @@ body {
 
   .progress {
     background-color: #F2F2F2 !important;
+    color: black;
   }
 }
-
+.custom-file-input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+.custom-file-label {
+  font-size: small !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+.form-file-text {
+  opacity: 0.8;
+}
 </style>
