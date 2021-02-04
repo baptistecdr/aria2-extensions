@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service build --mode development --watch",
-    "build": "vue-cli-service build",
+    "firefox-build": "BROWSER=firefox vue-cli-service build",
+    "chrome-build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

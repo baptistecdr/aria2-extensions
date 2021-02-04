@@ -6,12 +6,6 @@
   "description": "__MSG_extDescription__",
   "version": "3.0.0",
   "default_locale": "en",
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "aria2-extensions@users.noreply.github.com",
-      "strict_min_version": "69.0"
-    }
-  },
   "permissions": [
     "contextMenus",
     "cookies",
@@ -36,8 +30,7 @@
   "background": {
     "scripts": [
       "js/background.js"
-    ],
-    "persistent": false
+    ]
   },
   "browser_action": {
     "default_popup": "popup.html",

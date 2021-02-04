@@ -66,9 +66,12 @@
 - Clone the project
 - Run `cd firefox-chromium`
 - Run `npm install`
-- Run `npm run build` to build Firefox and Chromium extension
-    - Run `npm run serve` to build and hot-reloads for development
-    - Run `npm run lint` to lint and fixes files
+- Run `npm run firefox-build` to build Firefox extension
+- Run `npm run chrome-build` to build Chrome extension
+
+#### Development
+- Run `npm run serve` to build and hot-reloads for development
+- Run `npm run lint` to lint and fixes files
 
 ### Safari
 - Open `safari/Aria2 Integration.xcodeproj` with XCode
