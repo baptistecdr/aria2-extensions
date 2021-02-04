@@ -73,6 +73,9 @@
 - Run `npm run serve` to build and hot-reloads for development
 - Run `npm run lint` to lint and fixes files
 
+#### Internationalization
+* The extension speaks English and French but you can add your language in [public/_locales](https://github.com/baptistecdr/aria2-extensions/tree/master/firefox-chromium/public/_locales). You can find your language code [here](https://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/languages/internal/languages.cc#l23).
+
 ### Safari
 - Open `safari/Aria2 Integration.xcodeproj` with XCode
 - Build & Run the project
