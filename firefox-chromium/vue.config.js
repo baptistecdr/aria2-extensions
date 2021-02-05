@@ -22,7 +22,7 @@ module.exports = {
         if (process.env.BROWSER === 'firefox') {
           manifest["browser_specific_settings"] ={
             "gecko": {
-              "id": "aria2-extensions@users.noreply.github.com",
+              "id": "baptistecdr@users.noreply.github.com",
               "strict_min_version": "69.0"
             }
           };
