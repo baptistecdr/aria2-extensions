@@ -1,9 +1,9 @@
 {
   "name": "aria2-integration",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service build --mode development --watch",
+    "serve": "BROWSER=firefox vue-cli-service build --mode development --watch",
     "firefox-build": "BROWSER=firefox vue-cli-service build",
     "chrome-build": "vue-cli-service build",
     "lint": "vue-cli-service lint"

@@ -40,7 +40,8 @@
             :label="$i18n('extensionOptionsExcludeProtocols')"
             :description="$i18n('extensionOptionsExcludeProtocolsDescription')"
             label-for="capture-downloads-server">
-          <b-textarea v-model="excludedProtocols" :placeholder="$i18n('extensionOptionsExcludeProtocolsInformation')" :disabled="!options.capture" no-resize trim></b-textarea>
+          <b-textarea v-model="excludedProtocols" :placeholder="$i18n('extensionOptionsExcludeProtocolsInformation')"
+                      :disabled="!options.capture" no-resize trim></b-textarea>
         </b-form-group>
       </b-col>
     </b-row>
@@ -52,7 +53,8 @@
             :label="$i18n('extensionOptionsExcludeSites')"
             :description="$i18n('extensionOptionsExcludeSitesDescription')"
             label-for="capture-downloads-server">
-          <b-textarea v-model="excludedSites" :placeholder="$i18n('extensionOptionsExcludeSitesInformation')" :disabled="!options.capture" no-resize trim></b-textarea>
+          <b-textarea v-model="excludedSites" :placeholder="$i18n('extensionOptionsExcludeSitesInformation')"
+                      :disabled="!options.capture" no-resize trim></b-textarea>
         </b-form-group>
       </b-col>
     </b-row>
@@ -64,12 +66,21 @@
             :label="$i18n('extensionOptionsExcludeFileTypes')"
             :description="$i18n('extensionOptionsExcludeFileTypesDescription')"
             label-for="capture-downloads-server">
-          <b-textarea v-model="excludedFileTypes" :placeholder="$i18n('extensionOptionsExcludeFileTypesInformation')" :disabled="!options.capture" no-resize trim></b-textarea>
+          <b-textarea v-model="excludedFileTypes" :placeholder="$i18n('extensionOptionsExcludeFileTypesInformation')"
+                      :disabled="!options.capture" no-resize trim></b-textarea>
         </b-form-group>
+        <div>
+          <b-badge href="#" class="ml-2" variant="secondary" v-for="cft in commonFileTypes"
+                   :disabled="!options.capture"
+                   v-bind:key="cft"
+                   v-show="!options.excludedFileTypes.includes(cft)"
+                   v-on:click="addExcludeFileTypes(cft)">{{ cft }}
+          </b-badge>
+        </div>
       </b-col>
     </b-row>
 
-    <b-row>
+    <b-row class="mt-4">
       <b-col cols="12">
         <b-button variant="primary" v-on:click="save" :disabled="state === false">
           {{ $i18n("serverOptionsSave") }}
@@ -103,7 +114,9 @@ export default class ExtensionOptions extends Vue {
   }
 
   selected: any = null;
-  options: IOptions = Options.new()
+  options: IOptions = Options.new();
+
+  commonFileTypes = ["rar", "zip", "tar.gz", "iso", "dmg", "exe"];
 
   showSuccessAlert = false;
   showErrorAlert = false;
@@ -154,6 +167,11 @@ export default class ExtensionOptions extends Vue {
 
   set excludedFileTypes(value: string) {
     this.options.excludedFileTypes = this.formatExcludedValue(value);
+
+  }
+
+  addExcludeFileTypes(elem: string) {
+    this.options.excludedFileTypes.push(elem);
   }
 
   async save(showAlert: boolean) {
