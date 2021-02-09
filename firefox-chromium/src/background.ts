@@ -12,6 +12,7 @@ let connectionForCaptureDownloads: any = undefined;
 let options = Options.new();
 
 (async () => await initConnections())();
+(async () => await createContextMenus())();
 
 async function initConnections() {
     options = await Utils.options();
@@ -59,6 +60,7 @@ browser.storage.onChanged.addListener(async (changes) => {
 });
 
 async function createContextMenus() {
+    await browser.contextMenus.removeAll();
     browser.contextMenus.create({
         title: browser.i18n.getMessage('contextMenusTitle'),
         id: CONTEXT_MENUS_PARENT_ID,
@@ -78,8 +80,6 @@ browser.runtime.onInstalled.addListener(async (details) => {
     if (details.reason === "install") {
         await browser.runtime.openOptionsPage();
     }
-    await createContextMenus();
-    options = await Utils.options();
 });
 
 async function getCookies(url: string): Promise<string> {
