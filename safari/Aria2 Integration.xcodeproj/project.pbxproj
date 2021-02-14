@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2894C1224BF0289009F05CC /* icon128.png in Resources */ = {isa = PBXBuildFile; fileRef = D2894C1124BF0289009F05CC /* icon128.png */; };
+		D24E367B25D9196100D2A964 /* icon128.png in Resources */ = {isa = PBXBuildFile; fileRef = D24E367A25D9196100D2A964 /* icon128.png */; };
 		D2C64F0024BAFB90005C8CBB /* Aria2Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C64EFF24BAFB90005C8CBB /* Aria2Client.swift */; };
 		D2C64F0624BAFBF3005C8CBB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2C64F0524BAFBF3005C8CBB /* Alamofire */; };
 		D2C64F0924BAFC11005C8CBB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D2C64F0824BAFC11005C8CBB /* SwiftyJSON */; };
@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		D22A7A8A24C59028008B5AC8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		D22A7A8B24C59028008B5AC8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
-		D2894C1124BF0289009F05CC /* icon128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon128.png; path = "../../firefox-chromium/src/icons/icon128.png"; sourceTree = "<group>"; };
+		D24E367A25D9196100D2A964 /* icon128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon128.png; sourceTree = "<group>"; };
 		D2C64EFF24BAFB90005C8CBB /* Aria2Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aria2Client.swift; sourceTree = "<group>"; };
 		D2C64F0B24BB9D7A005C8CBB /* Aria2Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aria2Config.swift; sourceTree = "<group>"; };
 		D2C64F0E24BC2AEC005C8CBB /* Aria2Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aria2Parameters.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		D2DB75C424B864E7004CBDB6 /* Aria2 Integration Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D2894C1124BF0289009F05CC /* icon128.png */,
+				D24E367A25D9196100D2A964 /* icon128.png */,
 				D2C64EFF24BAFB90005C8CBB /* Aria2Client.swift */,
 				D2DB75C524B864E7004CBDB6 /* SafariExtensionHandler.swift */,
 				D2DB75C724B864E7004CBDB6 /* SafariExtensionViewController.swift */,
@@ -259,8 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2DB75CB24B864E7004CBDB6 /* SafariExtensionViewController.xib in Resources */,
-				D2894C1224BF0289009F05CC /* icon128.png in Resources */,
 				D2DB75CE24B864E7004CBDB6 /* script.js in Resources */,
+				D24E367B25D9196100D2A964 /* icon128.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
