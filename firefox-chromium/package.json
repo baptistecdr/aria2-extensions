@@ -1,6 +1,6 @@
 {
   "name": "aria2-integration",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "private": true,
   "scripts": {
     "serve": "BROWSER=firefox vue-cli-service build --mode development --watch",
@@ -17,15 +17,15 @@
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
-    "filesize": "^6.1.0",
+    "filesize": "^6.2.5",
     "path": "^0.12.7"
   },
   "devDependencies": {
     "@types/firefox-webext-browser": "^82.0.0",
-    "@types/node": "^14.14.37",
+    "@types/node": "^14.14.41",
     "@types/uuid": "^8.3.0",
-    "@typescript-eslint/eslint-plugin": "^4.21.0",
-    "@typescript-eslint/parser": "^4.21.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "@vue/cli-plugin-babel": "^4.5.12",
     "@vue/cli-plugin-eslint": "^4.5.12",
     "@vue/cli-plugin-typescript": "^4.5.12",
@@ -33,7 +33,7 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.24.0",
-    "eslint-plugin-vue": "^7.8.0",
+    "eslint-plugin-vue": "^7.9.0",
     "typescript": "^4.2.4",
     "vue-cli-plugin-browser-extension": "^0.25.2",
     "vue-plugin-webextension-i18n": "^0.1.2",
