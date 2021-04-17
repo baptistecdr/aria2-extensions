@@ -4,7 +4,7 @@
   "author": "baptistecdr",
   "homepage_url": "https://github.com/baptistecdr/aria2-extensions",
   "description": "__MSG_extDescription__",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "default_locale": "en",
   "permissions": [
     "contextMenus",
@@ -12,7 +12,6 @@
     "downloads",
     "notifications",
     "storage",
-    "activeTab",
     "<all_urls>"
   ],
   "icons": {
