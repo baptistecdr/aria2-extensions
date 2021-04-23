@@ -1,9 +1,9 @@
 {
   "name": "aria2-integration",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "private": true,
   "scripts": {
-    "serve": "BROWSER=firefox vue-cli-service build --mode development --watch",
+    "serve": "vue-cli-service build --mode development --watch",
     "firefox-build": "BROWSER=firefox vue-cli-service build",
     "chrome-build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -12,12 +12,12 @@
     "aria2": "^4.1.2",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
-    "core-js": "^3.10.1",
+    "core-js": "^3.11.0",
     "uuid": "^8.3.2",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
-    "filesize": "^6.2.5",
+    "filesize": "^6.3.0",
     "path": "^0.12.7"
   },
   "devDependencies": {

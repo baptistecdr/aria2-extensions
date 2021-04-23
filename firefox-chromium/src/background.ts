@@ -30,6 +30,11 @@ browser.storage.onChanged.addListener(async (changes) => {
         // Extension options
         if (key === "options") {
             options = Options.fromJSON(changes[key].newValue);
+            if (options.capture) {
+                connectionForCaptureDownloads = connections[options.server];
+            } else {
+                connectionForCaptureDownloads = undefined;
+            }
         }
         // New value
         else if (changes[key].oldValue === undefined) {
@@ -83,12 +88,15 @@ browser.runtime.onInstalled.addListener(async (details) => {
 });
 
 async function getCookies(url: string): Promise<string> {
-    const cookies = await browser.cookies.getAll({
-        'url': url
-    });
-    return cookies.reduce((acc, cookie) => {
-        return acc + `${cookie.name}=${cookie.value};`;
-    }, '');
+    if (url !== "") {
+        const cookies = await browser.cookies.getAll({
+            'url': url
+        });
+        return cookies.reduce((acc, cookie) => {
+            return acc + `${cookie.name}=${cookie.value};`;
+        }, '');
+    }
+    return "";
 }
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
@@ -130,10 +138,10 @@ browser.downloads.onCreated.addListener(async (downloadItem) => {
         const cookies = await getCookies(referrer);
         if (downloadItemMustBeCaptured(referrer, downloadItem)) {
             try {
-                await browser.downloads.cancel(downloadItem.id);
-                await browser.downloads.erase({id: downloadItem.id});
                 await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referrer, cookies);
                 await Utils.showNotification(browser.i18n.getMessage("addFileSuccess", connectionForCaptureDownloads.name));
+                await browser.downloads.cancel(downloadItem.id);
+                await browser.downloads.erase({id: downloadItem.id});
             } catch {
                 await Utils.showNotification(browser.i18n.getMessage('addFileError', connectionForCaptureDownloads.name));
             }
