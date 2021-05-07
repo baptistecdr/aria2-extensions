@@ -30,9 +30,8 @@ export default class App extends Vue {
 
 <style>
 body {
-  width: 500px;
-  height: 100%;
-  padding: 15px;
+  width: 416px;
+  margin: 15px;
 }
 
 @media (prefers-color-scheme: dark) {
