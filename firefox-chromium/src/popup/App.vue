@@ -1,7 +1,7 @@
 <template>
   <b-tabs content-class="pt-3" v-if="servers.length !== 0" lazy>
     <b-tab v-for="server in servers" :title="server.name" v-bind:key="server.key">
-      <server :config="server"/>
+      <server :config="server" :options="options"/>
     </b-tab>
   </b-tabs>
   <div class="text-center" v-else>
@@ -15,15 +15,18 @@ import {Component, Vue} from "vue-property-decorator";
 import {IServer} from "@/models/server";
 import {Utils} from "@/utils";
 import Server from "@/components/Server.vue";
+import {IOptions, Options} from "@/models/options";
 
 @Component({
   components: {Server},
 })
 export default class App extends Vue {
   private servers: IServer[] = [];
+  private options: IOptions = Options.new();
 
   async mounted() {
     this.servers = await Utils.servers();
+    this.options = await Utils.options();
   }
 }
 </script>

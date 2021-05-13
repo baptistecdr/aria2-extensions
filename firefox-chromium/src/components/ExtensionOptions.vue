@@ -20,7 +20,6 @@
         </b-form-group>
       </b-col>
     </b-row>
-
     <b-row>
       <b-col cols="12" align-self="center">
         <b-form-group
