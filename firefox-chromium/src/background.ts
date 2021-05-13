@@ -138,14 +138,13 @@ browser.downloads.onCreated.addListener(async (downloadItem) => {
         const cookies = await getCookies(referrer);
         if (downloadItemMustBeCaptured(referrer, downloadItem)) {
             try {
-                await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referrer, cookies);
-                await Utils.showNotification(browser.i18n.getMessage("addFileSuccess", connectionForCaptureDownloads.name));
                 await browser.downloads.cancel(downloadItem.id);
                 await browser.downloads.erase({id: downloadItem.id});
+                await Utils.captureDownloadItem(connectionForCaptureDownloads, downloadItem, referrer, cookies);
+                await Utils.showNotification(browser.i18n.getMessage("addFileSuccess", connectionForCaptureDownloads.name));
             } catch {
                 await Utils.showNotification(browser.i18n.getMessage('addFileError', connectionForCaptureDownloads.name));
             }
         }
     }
 });
-

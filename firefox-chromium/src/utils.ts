@@ -60,7 +60,7 @@ export class Utils {
         }
         return aria2.call('aria2.addUri', [url], {
             header: [`Referer: ${referer}`, `Cookie: ${cookies}`],
-            out: path.basename(url)
+            out: path.basename(item.filename)
         });
     }
 

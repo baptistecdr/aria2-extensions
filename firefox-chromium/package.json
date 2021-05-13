@@ -1,6 +1,6 @@
 {
   "name": "aria2-integration",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service build --mode development --watch",
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/firefox-webext-browser": "^82.0.0",
-    "@types/node": "^14.14.44",
+    "@types/node": "^14.14.45",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
