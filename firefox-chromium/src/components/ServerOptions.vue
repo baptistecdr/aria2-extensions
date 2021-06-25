@@ -82,9 +82,13 @@ import {IServer, Server} from "@/models/server";
 export default class ServerOptions extends Vue {
   @Prop() private current!: IServer;
 
-  private next: IServer = JSON.parse(JSON.stringify(this.current));
+  private next: IServer = {} as IServer;
   private showSuccessAlert = false;
   private showErrorAlert = false;
+
+  created() {
+    this.next = JSON.parse(JSON.stringify(this.current));
+  }
 
   get invalidFeedback(): string {
     return this.$i18n('serverOptionsInvalidFeedback');
