@@ -49,6 +49,8 @@ import filesize from 'filesize';
 import path from 'path';
 import {BIconArrowDown, BIconArrowUp, BIconPlay, BIconTrash, BIconPause} from "bootstrap-vue";
 import {Component, Prop, Vue} from 'vue-property-decorator';
+import {Duration, DurationOptions} from "luxon";
+import {ToISOTimeDurationOptions} from "luxon/src/duration";
 
 @Component({
   components: {BIconArrowUp, BIconArrowDown, BIconPlay, BIconPause, BIconTrash}
@@ -61,7 +63,7 @@ export default class Task extends Vue {
     if (this.info.bittorrent && this.info.bittorrent.info) {
       return this.info.bittorrent.info.name;
     } else {
-      return path.basename(this.info.files[0].path);
+      return path.basename(this.info.files[0].path || this.$i18n('taskNoFilename'));
     }
   }
 
@@ -93,13 +95,13 @@ export default class Task extends Vue {
   get eta(): string {
     if (this.info.downloadSpeed !== '0') {
       const etaSeconds = (this.info.totalLength - this.info.completedLength) / this.info.downloadSpeed;
-      return this.formatEta(etaSeconds.toString());
+      return this.formatEta(etaSeconds);
     }
     return "∞";
   }
 
   get progress(): number {
-    return Math.round(this.info.completedLength * 100 / this.info.totalLength);
+    return Math.round(this.info.completedLength * 100 / this.info.totalLength) || 0;
   }
 
   get progressLabelColor(): any {
@@ -161,18 +163,14 @@ export default class Task extends Vue {
     }
   }
 
-  formatTime(time: number): string {
-    const str = time.toString();
-    const pad = "00";
-    return pad.substring(0, pad.length - str.length) + str;
-  }
-
-  formatEta(sec: string): string {
-    let secNum = parseInt(sec, 10);
-    let hours = Math.floor(secNum / 3600);
-    let minutes = Math.floor((secNum - (hours * 3600)) / 60);
-    let seconds = secNum - (hours * 3600) - (minutes * 60);
-    return `${this.formatTime(hours)}:${this.formatTime(minutes)}:${this.formatTime(seconds)}`;
+  formatEta(seconds: number): string {
+    const milliseconds = seconds * 1000;
+    const duration = Duration.fromMillis(milliseconds, {
+      locale: browser.i18n.getUILanguage(),
+    } as DurationOptions)
+    return duration.toISOTime({
+      suppressMilliseconds: true,
+    } as ToISOTimeDurationOptions).replace(/\.\d{0,3}/, "");
   }
 }
 </script>

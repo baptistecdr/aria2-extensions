@@ -110,6 +110,9 @@
   "addTaskAddFilesBrowse": {
     "message": "Parcourir"
   },
+  "taskNoFilename": {
+    "message": "Nom du fichier non fourni"
+  },
   "taskStatusActive": {
     "message": "Active"
   },
