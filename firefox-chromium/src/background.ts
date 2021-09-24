@@ -90,7 +90,7 @@ browser.runtime.onInstalled.addListener(async (details) => {
 async function getCookies(url: string): Promise<string> {
     if (url !== "") {
         const cookies = await browser.cookies.getAll({
-            'url': url
+            url: url
         });
         return cookies.reduce((acc, cookie) => {
             return acc + `${cookie.name}=${cookie.value};`;
@@ -132,9 +132,26 @@ function downloadItemMustBeCaptured(referrer: string, item: DownloadItem): boole
         || !(options.excludedFileTypes.length > 0 && fileTypesRegExp.test(url))
 }
 
+async function getCurrentTab(): Promise<browser.tabs.Tab | undefined> {
+    const tabs = await browser.tabs.query({
+        currentWindow: true,
+        active: true
+    });
+    if (tabs.length > 0) {
+        return tabs[0]
+    }
+    return undefined;
+}
+
 browser.downloads.onCreated.addListener(async (downloadItem) => {
     if (connectionForCaptureDownloads !== undefined && options.capture) {
-        const referrer = downloadItem.referrer ?? "";
+        let referrer = downloadItem.referrer ?? ""
+        if (referrer === "" || referrer == "about:blank") {
+            const currentTab = await getCurrentTab();
+            if (currentTab !== undefined) {
+                referrer = currentTab.url ?? ""
+            }
+        }
         const cookies = await getCookies(referrer);
         if (downloadItemMustBeCaptured(referrer, downloadItem)) {
             try {
