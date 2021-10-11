@@ -27,6 +27,9 @@ module.exports = {
                         }
                     };
                 }
+                if (process.env.MODE === "serve") {
+                    manifest["content_security_policy"] = "script-src 'self' 'unsafe-eval'; object-src 'self';"
+                }
                 return manifest;
             },
         }

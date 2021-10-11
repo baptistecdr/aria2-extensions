@@ -57,7 +57,15 @@
             :label="$i18n('serverOptionsSecret')"
             :description="$i18n('serverOptionsSecretDescription')"
             label-for="server-secret">
-          <b-form-input type="password" id="server-secret" v-model="next.secret"></b-form-input>
+          <b-input-group>
+            <b-form-input :type="showSecret ? 'text': 'password'" id="server-secret" v-model="next.secret"></b-form-input>
+            <b-input-group-append>
+              <b-input-group-text v-on:click="showSecret = !showSecret">
+                <b-icon-eye v-if="!showSecret"></b-icon-eye>
+                <b-icon-eye-slash v-else></b-icon-eye-slash>
+              </b-input-group-text>
+            </b-input-group-append>
+          </b-input-group>
         </b-form-group>
       </b-col>
     </b-row>
@@ -85,6 +93,7 @@ export default class ServerOptions extends Vue {
   private next: IServer = {} as IServer;
   private showSuccessAlert = false;
   private showErrorAlert = false;
+  private showSecret = false;
 
   created() {
     this.next = JSON.parse(JSON.stringify(this.current));

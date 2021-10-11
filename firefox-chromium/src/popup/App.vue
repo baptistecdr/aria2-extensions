@@ -33,7 +33,7 @@ export default class App extends Vue {
 
 <style>
 body {
-  width: 416px;
+  width: 432px;
   margin: 15px;
 }
 

@@ -100,7 +100,7 @@ async function getCookies(url: string): Promise<string> {
 }
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
-    const aria2 = connections[info.menuItemId]!;
+    const aria2 = connections[info.menuItemId];
     const urls = [];
     if (info.linkUrl) {
         urls.push(info.linkUrl)
@@ -113,7 +113,7 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
         try {
             await Utils.captureUrl(aria2, url, referer, cookies);
             await Utils.showNotification(browser.i18n.getMessage("addUrlSuccess", aria2.name));
-        } catch (e) {
+        } catch {
             await Utils.showNotification(browser.i18n.getMessage('addUrlError', aria2.name));
         }
     }
