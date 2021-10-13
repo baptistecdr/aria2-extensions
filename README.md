@@ -36,15 +36,6 @@
     <img src="https://i.snipboard.io/6Fajxw.jpg" alt="Task finished Safari" width="400px">  
 </p>
 
-## Table of contents
-
-- [Quick start](#quick-start)
-- [How to build](#how-to-build)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-- [Thanks to](#thanks-to)
-
 ## Description
 
 Aria2 Integration allows you to redirect downloads to your Aria2 server. This setting can be tuned in the extension's
