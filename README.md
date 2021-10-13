@@ -13,7 +13,7 @@
 </p>
 <p align="center">
     <img src="img/firefox/popup_add_download_light.png" alt="Add Task (Light)" width="400px"/>
-    <img src="img/firefox/popup_add_download_light.png" alt="Add Task (Dark)" width="400px"/>
+    <img src="img/firefox/popup_add_download_dark.png" alt="Add Task (Dark)" width="400px"/>
 </p>
 <p align="center">
     <img src="img/firefox/popup_download_running_light.png" alt="Task running (Light)" width="400px"/>
