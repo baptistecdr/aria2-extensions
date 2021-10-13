@@ -41,21 +41,21 @@
 Aria2 Integration allows you to redirect downloads to your Aria2 server. This setting can be tuned in the extension's
 preferences :
 
-- You can enable/disable this functionality</li>
-- You can exclude some protocols, sites or/and file types</li>
+- You can enable/disable this functionality
+- You can exclude some protocols, sites or/and file types
 
 In addition, you can send download links via the context menus:
 
-- Right click on a link and select your server in "Download with Aria2"</li>
-- Right click on multiple text links and select you server in "Download with Aria2"</li>
+- Right click on a link and select your server in "Download with Aria2"
+- Right click on multiple text links and select you server in "Download with Aria2"
 
 By clicking on the extension icon, a popup appear. You can see the progress of each Aria2 server:
 
-- Total download/upload speed</li>
-- Progress of each task and possibility to pause/resume/delete</li>
-- Delete all finished tasks</li>
-- Add links, torrent files, magnets link/files</li>
-- A quick settings to enable/disable download redirection</li>
+- Total download/upload speed
+- Progress of each task and possibility to pause/resume/delete
+- Delete all finished tasks
+- Add links, torrent files, magnets link/files
+- A quick settings to enable/disable download redirection
 
 Finally, the extension is available in light/dark theme depending on your system preferences and you can add multiple servers in the extension's preferences.
 
