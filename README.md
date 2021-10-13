@@ -101,8 +101,6 @@ addressed yet, [please open a new issue](https://github.com/baptistecdr/aria2-ex
 
 Contributions are welcome!
 
-## Contributors
-
 ## Confidentiality
 
 Cookies read are only transmitted to Aria2 instance. Be sure to use a secure connection between your computer and the
