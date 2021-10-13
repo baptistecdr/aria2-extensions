@@ -78,6 +78,6 @@ export default class AddTask extends Vue {
 
 <style scoped>
 .btn-add {
-  height: 30px;
+  height: 29.5px;
 }
 </style>

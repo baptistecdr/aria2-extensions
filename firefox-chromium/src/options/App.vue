@@ -63,6 +63,13 @@ export default class App extends Vue {
     background-color: #202023 !important;
     border-color: #343638 !important;
   }
+
+  .input-group-text {
+    color: #FFF !important;
+    background-color: #404043 !important;
+    border-color: #343638 !important;
+  }
+
   .form-control:disabled {
     color: #FFF !important;
     background-color: #202023 !important;

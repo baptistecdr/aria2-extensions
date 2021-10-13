@@ -6,7 +6,7 @@ if(process.argv.length <= 2) {
     process.exit();
 }
 const version = process.argv[2];
-const filesToUpdate = ["package.json", "src/manifest.json"];
+const filesToUpdate = ["package.json", "src/manifest.json", "package-lock.json"];
 
 filesToUpdate.forEach(file => {
     fs.readFile(file, 'utf8', (err, data) => {
