@@ -13,7 +13,7 @@
     "bootstrap": "4.6.1",
     "bootstrap-vue": "2.21.2",
     "core-js": "3.18.2",
-    "filesize": "8.0.3",
+    "filesize": "8.0.7",
     "luxon": "2.0.2",
     "path": "0.12.7",
     "uuid": "8.3.2",
