@@ -26,13 +26,15 @@ jobs:
         working-directory: ./firefox-chromium
 
       - uses: actions/download-artifact@v2
+      - name: Download Firefox Extension
         with:
-          path: artifacts
+          path: firefox-chromium/artifacts
 
       - name: Build Chromium Extension
         run: npm run chrome-build
         working-directory: ./firefox-chromium
 
       - uses: actions/download-artifact@v2
+      - name: Download Chromium Extension
         with:
-          path: artifacts
+          path: firefox-chromium/artifacts
