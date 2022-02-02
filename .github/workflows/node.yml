@@ -26,7 +26,6 @@ jobs:
         working-directory: ./firefox-chromium
 
       - uses: actions/download-artifact@v2
-      - name: Download Firefox Extension
         with:
           path: firefox-chromium/artifacts
 
@@ -35,6 +34,5 @@ jobs:
         working-directory: ./firefox-chromium
 
       - uses: actions/download-artifact@v2
-      - name: Download Chromium Extension
         with:
           path: firefox-chromium/artifacts
