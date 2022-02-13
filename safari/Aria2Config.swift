@@ -1,7 +1,7 @@
 import Foundation
 
 public class Aria2Config: Codable {
-    private static let storage: UserDefaults? = UserDefaults(suiteName: "group.bosp.Aria2-Integration")
+    private static let storage: UserDefaults? = UserDefaults(suiteName: "group.5G6LMK53EG.fr.bcosp.Aria2-Integration")
 
     private let _host: String
     private let _secure: Bool
@@ -44,9 +44,9 @@ public class Aria2Config: Codable {
     }
 
     public static func load() -> Aria2Config {
-        if let storage = Aria2Config.storage{
-            let host = storage.string(forKey: "host")
-            let port = storage.string(forKey: "port")
+        if let storage = Aria2Config.storage {
+            let host = storage.string(forKey: "host") ?? "localhost"
+            let port = storage.string(forKey: "port") ?? "6800"
             let secure = storage.bool(forKey: "secure")
             let query: [String: Any] = [kSecAttrService as String: "Aria2-Integration",
                                         kSecClass as String: kSecClassGenericPassword as String,
@@ -60,7 +60,7 @@ public class Aria2Config: Codable {
             if status == errSecSuccess, let resultDictionary = result as? [String: Any],
                let data = resultDictionary[kSecValueData as String] as? Data {
                 let secret = String(data: data, encoding: .utf8) ?? ""
-                return Aria2Config(host: host!, secure: secure, port: UInt16(port!)!, secret: secret)
+                return Aria2Config(host: host, secure: secure, port: UInt16(port)!, secret: secret)
             }
         }
         return Aria2Config()

@@ -6,7 +6,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.bosp.Aria2-Integration</string>
+		<string>group.5G6LMK53EG.fr.bcosp.Aria2-Integration</string>
 	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -216,7 +216,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1210;
-				ORGANIZATIONNAME = baptistecdr;
+				ORGANIZATIONNAME = bcosp;
 				TargetAttributes = {
 					D2DB75A924B864E6004CBDB6 = {
 						CreatedOnToolsVersion = 11.5;
@@ -227,7 +227,7 @@
 				};
 			};
 			buildConfigurationList = D2DB75A524B864E6004CBDB6 /* Build configuration list for PBXProject "Aria2 Integration" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -465,7 +465,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -486,7 +486,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
