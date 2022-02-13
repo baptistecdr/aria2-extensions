@@ -14,7 +14,6 @@
 		D2C64F0C24BB9D7A005C8CBB /* Aria2Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C64F0B24BB9D7A005C8CBB /* Aria2Config.swift */; };
 		D2C64F0D24BB9D7A005C8CBB /* Aria2Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C64F0B24BB9D7A005C8CBB /* Aria2Config.swift */; };
 		D2C64F0F24BC2AEC005C8CBB /* Aria2Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C64F0E24BC2AEC005C8CBB /* Aria2Parameters.swift */; };
-		D2DB75AE24B864E6004CBDB6 /* Aria2_Integration.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = D2DB75AD24B864E6004CBDB6 /* Aria2_Integration.entitlements */; };
 		D2DB75B024B864E6004CBDB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB75AF24B864E6004CBDB6 /* AppDelegate.swift */; };
 		D2DB75B324B864E6004CBDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DB75B124B864E6004CBDB6 /* Main.storyboard */; };
 		D2DB75B524B864E6004CBDB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB75B424B864E6004CBDB6 /* ViewController.swift */; };
@@ -29,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D2A6D84827A6CB4900CCFA37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2DB75A224B864E6004CBDB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2DB75BC24B864E7004CBDB6;
+			remoteInfo = "Aria2 Integration Extension";
+		};
 		D2DB75BF24B864E7004CBDB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D2DB75A224B864E6004CBDB6 /* Project object */;
@@ -172,6 +178,7 @@
 			);
 			dependencies = (
 				D2DB75C024B864E7004CBDB6 /* PBXTargetDependency */,
+				D2A6D84927A6CB4900CCFA37 /* PBXTargetDependency */,
 			);
 			name = "Aria2 Integration";
 			packageProductDependencies = (
@@ -248,7 +255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2DB75AE24B864E6004CBDB6 /* Aria2_Integration.entitlements in Resources */,
 				D2DB75B724B864E7004CBDB6 /* Assets.xcassets in Resources */,
 				D2DB75B324B864E6004CBDB6 /* Main.storyboard in Resources */,
 			);
@@ -293,6 +299,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D2A6D84927A6CB4900CCFA37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2DB75BC24B864E7004CBDB6 /* Aria2 Integration Extension */;
+			targetProxy = D2A6D84827A6CB4900CCFA37 /* PBXContainerItemProxy */;
+		};
 		D2DB75C024B864E7004CBDB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2DB75BC24B864E7004CBDB6 /* Aria2 Integration Extension */;
@@ -454,7 +465,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bosp.Aria2-Integration-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -475,7 +486,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bosp.Aria2-Integration-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -498,7 +509,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bosp.Aria2-Integration";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -520,7 +531,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bosp.Aria2-Integration";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bcosp.Aria2-Integration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

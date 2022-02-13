@@ -24,15 +24,6 @@
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSExtension</key>
 	<dict>
-		<key>SFSafariContextMenu</key>
-		<array>
-			<dict>
-				<key>Text</key>
-				<string>Download with Aria2</string>
-				<key>Command</key>
-				<string>Add</string>
-			</dict>
-		</array>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.Safari.extension</string>
 		<key>NSExtensionPrincipalClass</key>
@@ -42,6 +33,15 @@
 			<dict>
 				<key>Script</key>
 				<string>script.js</string>
+			</dict>
+		</array>
+		<key>SFSafariContextMenu</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>Add</string>
+				<key>Text</key>
+				<string>Download with Aria2</string>
 			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
