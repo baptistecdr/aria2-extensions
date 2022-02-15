@@ -25,14 +25,16 @@ jobs:
         run: npm run firefox-build
         working-directory: ./firefox-chromium
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
-          path: firefox-chromium/artifacts
+          name: aria2-integration-firefox
+          path: ./firefox-chromium/artifacts/
 
       - name: Build Chromium Extension
         run: npm run chrome-build
         working-directory: ./firefox-chromium
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
-          path: firefox-chromium/artifacts
+          name: aria2-integration-chromium
+          path: ./firefox-chromium/artifacts/
