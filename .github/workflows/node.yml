@@ -1,40 +1,55 @@
 name: Node
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [ push ]
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
+        name: Clone repository
       - uses: actions/setup-node@v3
+        name: Setup Node.js
         with:
           node-version: '14'
-
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
         working-directory: ./firefox-chromium
-
-      - name: Build Firefox Extension
+      - name: Build Firefox extension
         run: npm run firefox-build
         working-directory: ./firefox-chromium
-
       - uses: actions/upload-artifact@v3
+        name: Upload aria2-integration-firefox
         with:
           name: aria2-integration-firefox
           path: ./firefox-chromium/artifacts/
-
-      - name: Build Chromium Extension
+      - name: Build Chromium extension
         run: npm run chrome-build
         working-directory: ./firefox-chromium
-
       - uses: actions/upload-artifact@v3
+        name: Upload aria2-integration-chromium
         with:
           name: aria2-integration-chromium
           path: ./firefox-chromium/artifacts/
+  release:
+    needs: build
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && startsWith(github.event.head_commit.message, 'Release v')
+    steps:
+      - uses: actions/checkout@v3
+        name: Clone Repository
+      - name: Get Release Version
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          echo "::set-output name=VERSION::$(echo $COMMIT_MESSAGE | grep -Po 'v\d+\.\d+\.\d+')"
+        id: version
+      - uses: rickstaa/action-create-tag@v1
+        name: Create tag
+        env:
+          VERSION: $(echo $COMMIT_MESSAGE | grep -Po "v\d+\.\d+\.\d+")
+        with:
+          tag: ${{ steps.version.outputs.VERSION }}
+          message: ${{ github.event.head_commit.message }}
