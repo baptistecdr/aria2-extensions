@@ -11,10 +11,10 @@
   "dependencies": {
     "aria2": "4.1.2",
     "bootstrap": "4.6.1",
-    "bootstrap-vue": "2.21.2",
+    "bootstrap-vue": "2.22.0",
     "core-js": "3.22.0",
     "filesize": "8.0.7",
-    "luxon": "2.3.1",
+    "luxon": "2.3.2",
     "path": "0.12.7",
     "uuid": "8.3.2",
     "vue": "2.6.14",
