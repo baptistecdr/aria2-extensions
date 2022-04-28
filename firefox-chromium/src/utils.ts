@@ -58,9 +58,11 @@ export class Utils {
         if (url.match(/\.torrent$|\.meta4$|\.metalink$/)) {
             return Utils.captureTorrentOrMetalink(aria2, url, "");
         }
+        const isWin = process.platform === "win32";
+
         return aria2.call('aria2.addUri', [url], {
             header: [`Referer: ${referer}`, `Cookie: ${cookies}`],
-            out: path.basename(item.filename)
+            out: isWin ? path.win32.basename(item.filename) : path.basename(item.filename)
         });
     }
 
