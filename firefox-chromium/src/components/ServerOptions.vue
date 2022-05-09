@@ -58,7 +58,8 @@
             :description="$i18n('serverOptionsSecretDescription')"
             label-for="server-secret">
           <b-input-group>
-            <b-form-input :type="showSecret ? 'text': 'password'" id="server-secret" v-model="next.secret"></b-form-input>
+            <b-form-input :type="showSecret ? 'text': 'password'" id="server-secret"
+                          v-model="next.secret"></b-form-input>
             <b-input-group-append>
               <b-input-group-text v-on:click="showSecret = !showSecret">
                 <b-icon-eye v-if="!showSecret"></b-icon-eye>
@@ -66,6 +67,21 @@
               </b-input-group-text>
             </b-input-group-append>
           </b-input-group>
+        </b-form-group>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col cols="12">
+        <b-form-group
+            id="fieldset-rpc-parameters"
+            :label="$i18n('serverOptionsRpcParameters')"
+            label-for="rpc-parameters">
+          <b-form-textarea
+              id="rpc-parameters"
+              size="sm"
+              :placeholder="rpcParametersPlaceholder"
+              v-model="rpcParameters"
+          ></b-form-textarea>
         </b-form-group>
       </b-col>
     </b-row>
@@ -94,9 +110,15 @@ export default class ServerOptions extends Vue {
   private showSuccessAlert = false;
   private showErrorAlert = false;
   private showSecret = false;
+  private rpcParameters = ""
+  private rpcParametersPlaceholder = "split: 1\nhttp-proxy: http://proxy/\n"
 
   created() {
     this.next = JSON.parse(JSON.stringify(this.current));
+
+    for (let opt in this.current.rpcParameters) {
+      this.rpcParameters += `${opt}: ${this.current.rpcParameters[opt]}\n`
+    }
   }
 
   get invalidFeedback(): string {
@@ -108,6 +130,16 @@ export default class ServerOptions extends Vue {
   }
 
   async save() {
+    this.next.rpcParameters = {}
+    this.rpcParameters.split("\n").forEach(
+        parameter => {
+          let [opt, ...rest] = parameter.split(/\s*:\s*/)
+          const value = rest.join(":")
+          if (value !== "") {
+            this.next.rpcParameters[opt] = value
+          }
+        }
+    )
     try {
       await browser.storage.sync.set({
         [this.current.key]: Server.toJSON(this.next)

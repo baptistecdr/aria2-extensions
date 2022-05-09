@@ -32,6 +32,9 @@
   "serverOptionsSecretDescription": {
     "message": "Laissez le champ vide si ce n'est pas précisé."
   },
+  "serverOptionsRpcParameters": {
+    "message": "Paramètres RPC"
+  },
   "serverOptionsSave": {
     "message": "Sauvegarder"
   },

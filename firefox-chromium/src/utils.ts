@@ -46,10 +46,11 @@ export class Utils {
     static async captureTorrentOrMetalink(aria2: any, url: string, filename: string) {
         const blob = await Utils.download(url);
         const b64 = await Utils.encodeFileToBase64(blob);
+        const rpcParameters = aria2.rpcParameters || {};
         if (url.endsWith('.torrent') || filename.endsWith('.torrent')) {
-            return aria2.call('aria2.addTorrent', b64);
+            return aria2.call('aria2.addTorrent', b64, rpcParameters);
         }
-        return aria2.call('aria2.addMetalink', b64);
+        return aria2.call('aria2.addMetalink', b64, rpcParameters);
     }
 
     static async captureDownloadItem(aria2: any, item: DownloadItem, referer: string, cookies: string) {
@@ -60,9 +61,11 @@ export class Utils {
         }
         const isWin = process.platform === "win32";
 
+        const rpcParameters = aria2.rpcParameters || {};
         return aria2.call('aria2.addUri', [url], {
             header: [`Referer: ${referer}`, `Cookie: ${cookies}`],
-            out: isWin ? path.win32.basename(item.filename) : path.basename(item.filename)
+            out: isWin ? path.win32.basename(item.filename) : path.basename(item.filename),
+            ...rpcParameters
         });
     }
 
@@ -70,7 +73,8 @@ export class Utils {
         if (url.match(/\.torrent$|\.meta4$|\.metalink$/)) {
             return Utils.captureTorrentOrMetalink(aria2, url, '');
         }
-        return aria2.call('aria2.addUri', [url], {header: [`Referer: ${referer}`, `Cookie: ${cookies}`]});
+        const rpcParameters = aria2.rpcParameters || {};
+        return aria2.call('aria2.addUri', [url], {header: [`Referer: ${referer}`, `Cookie: ${cookies}`], ...rpcParameters});
     }
 
     static async showNotification(message: string) {

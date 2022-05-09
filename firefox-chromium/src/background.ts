@@ -127,9 +127,15 @@ function downloadItemMustBeCaptured(referrer: string, item: DownloadItem): boole
     // @ts-ignore
     const url = item.finalUrl ?? item.url;
 
-    return !(options.excludedProtocols.length > 0 && protocolsRegExp.test(url))
-        || !(options.excludedSites.length > 0 && (sitesRegExp.test(referrer) || sitesRegExp.test(url)))
-        || !(options.excludedFileTypes.length > 0 && fileTypesRegExp.test(url))
+    if (options.excludedProtocols.length > 0 && protocolsRegExp.test(url)) {
+        return false;
+    }
+
+    if (options.excludedSites.length > 0 && (sitesRegExp.test(referrer) || sitesRegExp.test(url))) {
+        return false
+    }
+
+    return !(options.excludedFileTypes.length > 0 && fileTypesRegExp.test(url));
 }
 
 async function getCurrentTab(): Promise<browser.tabs.Tab | undefined> {

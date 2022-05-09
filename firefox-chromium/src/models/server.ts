@@ -7,6 +7,7 @@ export interface IServer {
     secret: string;
     path: string;
     capture: boolean;
+    rpcParameters: any
 }
 
 export class Server {
@@ -20,6 +21,7 @@ export class Server {
         server.path = "/jsonrpc";
         server.secret = "";
         server.capture = false;
+        server.rpcParameters = {}
         return server;
     }
 
