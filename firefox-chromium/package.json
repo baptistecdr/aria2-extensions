@@ -26,36 +26,13 @@
     "@types/luxon": "2.3.2",
     "@types/node": "14.18.18",
     "@types/uuid": "8.3.4",
-    "@typescript-eslint/eslint-plugin": "5.26.0",
-    "@typescript-eslint/parser": "5.26.0",
-    "@vue/cli-plugin-babel": "4.5.17",
-    "@vue/cli-plugin-eslint": "4.5.17",
     "@vue/cli-plugin-typescript": "4.5.17",
     "@vue/cli-service": "4.5.17",
-    "@vue/eslint-config-typescript": "10.0.0",
-    "@babel/eslint-parser": "7.18.2",
-    "eslint": "7.32.0",
-    "eslint-plugin-vue": "9.0.1",
+    "@vue/cli-plugin-babel": "4.5.17",
     "typescript": "4.7.2",
     "vue-cli-plugin-browser-extension": "0.25.2",
     "vue-plugin-webextension-i18n": "0.1.2",
     "vue-template-compiler": "2.6.14"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true,
-      "webextensions": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/typescript"
-    ],
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
-    },
-    "rules": {}
   },
   "browserslist": [
     "> 1%",
