@@ -12,7 +12,7 @@
     "aria2": "4.1.2",
     "bootstrap": "4.6.1",
     "bootstrap-vue": "2.22.0",
-    "core-js": "3.23.0",
+    "core-js": "3.23.1",
     "filesize": "9.0.2",
     "luxon": "2.4.0",
     "path": "0.12.7",
