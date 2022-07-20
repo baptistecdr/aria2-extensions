@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "aria2": "4.1.2",
-    "bootstrap": "4.6.1",
+    "bootstrap": "4.6.2",
     "bootstrap-vue": "2.22.0",
     "core-js": "3.23.5",
     "filesize": "9.0.11",
