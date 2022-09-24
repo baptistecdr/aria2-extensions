@@ -77,19 +77,19 @@ export default class Task extends Vue {
   }
 
   get downloadSpeed(): string {
-    return `${filesize(this.info.downloadSpeed)}/s`;
+    return `${filesize(this.info.downloadSpeed, {base: 2})}/s`;
   }
 
   get uploadSpeed(): string {
-    return `${filesize(this.info.uploadSpeed)}/s`;
+    return `${filesize(this.info.uploadSpeed, {base: 2})}/s`;
   }
 
   get completedLength(): string {
-    return filesize(this.info.completedLength);
+    return filesize(this.info.completedLength, {base: 2});
   }
 
   get totalLength(): string {
-    return filesize(this.info.totalLength);
+    return filesize(this.info.totalLength, {base: 2});
   }
 
   get eta(): string {
