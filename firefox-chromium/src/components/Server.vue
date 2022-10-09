@@ -54,10 +54,10 @@ import {BIconArrowUp, BIconArrowDown, BIconGear, BIconCaretLeft} from "bootstrap
 import Task from "./Task.vue";
 // @ts-ignore
 import Aria2 from 'aria2';
-import filesize from 'filesize';
 import AddTask from "./AddTask.vue";
 import {IServer} from "@/models/server";
 import {IOptions, Options} from "@/models/options";
+import {filesize} from "filesize";
 
 @Component({
   components: {
@@ -69,8 +69,9 @@ export default class Server extends Vue {
   @Prop() private config!: IServer;
 
   private aria2: any = null;
-  private downloadSpeed: string = "0 B/s";
-  private uploadSpeed: string = "0 B/s";
+  private fileSizeBase = {base: 2}
+  private downloadSpeed: string = filesize(0, this.fileSizeBase);
+  private uploadSpeed: string = filesize(0, this.fileSizeBase);
   private numWaiting: number = 0;
   private numStopped: number = 0;
   private tasks: any[] = [];
@@ -105,8 +106,8 @@ export default class Server extends Vue {
 
   async getGlobalStat() {
     const res = await this.aria2.call('getGlobalStat', [], {});
-    this.downloadSpeed = `${filesize(res.downloadSpeed)}/s`;
-    this.uploadSpeed = `${filesize(res.uploadSpeed)}/s`;
+    this.downloadSpeed = `${filesize(res.downloadSpeed, this.fileSizeBase)}/s`;
+    this.uploadSpeed = `${filesize(res.uploadSpeed, this.fileSizeBase)}/s`;
     this.numWaiting = parseInt(res.numWaiting);
     this.numStopped = parseInt(res.numStopped);
   }

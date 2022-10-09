@@ -48,9 +48,9 @@ export class Utils {
         const b64 = await Utils.encodeFileToBase64(blob);
         const rpcParameters = aria2.rpcParameters || {};
         if (url.endsWith('.torrent') || filename.endsWith('.torrent')) {
-            return aria2.call('aria2.addTorrent', b64, rpcParameters);
+            return aria2.call('aria2.addTorrent', b64, [], rpcParameters);
         }
-        return aria2.call('aria2.addMetalink', b64, rpcParameters);
+        return aria2.call('aria2.addMetalink', b64, [], rpcParameters);
     }
 
     static async captureDownloadItem(aria2: any, item: DownloadItem, referer: string, cookies: string) {

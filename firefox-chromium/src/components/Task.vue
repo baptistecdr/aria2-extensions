@@ -45,12 +45,12 @@
 </template>
 
 <script lang="ts">
-import filesize from 'filesize';
 import path from 'path';
 import {BIconArrowDown, BIconArrowUp, BIconPlay, BIconTrash, BIconPause} from "bootstrap-vue";
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Duration, DurationOptions} from "luxon";
 import {ToISOTimeDurationOptions} from "luxon/src/duration";
+import {filesize} from "filesize";
 
 @Component({
   components: {BIconArrowUp, BIconArrowDown, BIconPlay, BIconPause, BIconTrash}
@@ -58,6 +58,7 @@ import {ToISOTimeDurationOptions} from "luxon/src/duration";
 export default class Task extends Vue {
   @Prop() private info!: any;
   @Prop() private aria2!: any;
+  private fileSizeBase = {base: 2}
 
   get filename() {
     if (this.info.bittorrent && this.info.bittorrent.info) {
@@ -77,19 +78,19 @@ export default class Task extends Vue {
   }
 
   get downloadSpeed(): string {
-    return `${filesize(this.info.downloadSpeed, {base: 2})}/s`;
+    return `${filesize(this.info.downloadSpeed, this.fileSizeBase)}/s`;
   }
 
   get uploadSpeed(): string {
-    return `${filesize(this.info.uploadSpeed, {base: 2})}/s`;
+    return `${filesize(this.info.uploadSpeed, this.fileSizeBase)}/s`;
   }
 
   get completedLength(): string {
-    return filesize(this.info.completedLength, {base: 2});
+    return filesize(this.info.completedLength, this.fileSizeBase);
   }
 
   get totalLength(): string {
-    return filesize(this.info.totalLength, {base: 2});
+    return filesize(this.info.totalLength, this.fileSizeBase);
   }
 
   get eta(): string {

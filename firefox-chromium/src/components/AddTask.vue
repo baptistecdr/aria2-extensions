@@ -57,14 +57,15 @@ export default class AddTask extends Vue {
   }
 
   async addFiles() {
+    const rpcParameters = this.aria2.rpcParameters || {};
     for (const file of this.files) {
       try {
         if (file.name.match(/\.torrent$/)) {
           const b64 = await Utils.encodeFileToBase64(file);
-          await this.aria2.call('aria2.addTorrent', b64);
+          await this.aria2.call('aria2.addTorrent', b64, [], rpcParameters);
         } else if (file.name.match(/\.meta4$|\.metalink$/)) {
           const b64 = await Utils.encodeFileToBase64(file);
-          await this.aria2.call('aria2.addMetalink', b64);
+          await this.aria2.call('aria2.addMetalink', b64, [], rpcParameters);
         }
         await Utils.showNotification(this.$i18n('addFileSuccess', this.aria2.name));
       } catch {
