@@ -17,7 +17,7 @@
     "luxon": "3.0.4",
     "path": "0.12.7",
     "uuid": "9.0.0",
-    "vue": "2.7.10",
+    "vue": "3.2.41",
     "vue-class-component": "7.2.6",
     "vue-property-decorator": "9.1.2"
   },
