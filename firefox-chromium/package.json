@@ -11,7 +11,7 @@
   "dependencies": {
     "aria2": "4.1.2",
     "bootstrap": "4.6.2",
-    "bootstrap-vue": "2.22.0",
+    "bootstrap-vue": "2.23.0",
     "core-js": "3.26.0",
     "filesize": "10.0.5",
     "luxon": "3.0.4",
