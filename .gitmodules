@@ -1,0 +1,3 @@
+[submodule "aria2-integration"]
+	path = aria2-integration
+	url = git@github.com:baptistecdr/aria2-integration.git

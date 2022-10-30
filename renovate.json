@@ -1,17 +1,5 @@
 {
   "extends": [
     "config:base"
-  ],
-  "packageRules": [
-    {
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "automerge": true
-    }
-  ],
-  "lockFileMaintenance": {
-    "enabled": true
-  }
+  ]
 }
