@@ -8,7 +8,8 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["digest"],
-      "automerge": true
+      "automerge": true,
+      "ignoreTests": true
     }
   ]
 }
