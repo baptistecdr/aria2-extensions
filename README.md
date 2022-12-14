@@ -49,5 +49,6 @@ Finally, the extension is available in light/dark theme depending on your system
 
 ## Quick start
 
+- [Microsoft Edge Store](https://microsoftedge.microsoft.com/addons/detail/aria2-integration/hmmpdilndjfmceolhbgjejogjaglbiel) 
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/aria2-integration/hnenidncmoeebipinjdfniagjnfjbapi)
 - [Firefox Extension Store](https://addons.mozilla.org/en-US/firefox/addon/aria2-extension/)
