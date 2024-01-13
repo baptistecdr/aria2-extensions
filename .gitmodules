@@ -1,3 +1,6 @@
 [submodule "aria2-integration"]
 	path = aria2-integration
 	url = https://github.com/baptistecdr/aria2-integration.git
+[submodule "aria2-integration-safari"]
+	path = aria2-integration-safari
+	url = https://github.com/baptistecdr/aria2-integration-safari.git
