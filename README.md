@@ -4,24 +4,24 @@
 </p>
 
 <p align="center">
-    <img src="img/firefox/popup_no_download_light.png" alt="No task (Light)" width="400px"/>
-    <img src="img/firefox/popup_no_download_dark.png" alt="No task (Dark)" width="400px"/>
+    <img src="images/Firefox/popup_no_download_light.png" alt="No task (Light)" width="400px"/>
+    <img src="images/Firefox/popup_no_download_dark.png" alt="No task (Dark)" width="400px"/>
 </p>
 <p align="center">
-    <img src="img/firefox/popup_add_download_light.png" alt="Add Task (Light)" width="400px"/>
-    <img src="img/firefox/popup_add_download_dark.png" alt="Add Task (Dark)" width="400px"/>
+    <img src="images/Firefox/popup_add_download_light.png" alt="Add Task (Light)" width="400px"/>
+    <img src="images/Firefox/popup_add_download_dark.png" alt="Add Task (Dark)" width="400px"/>
 </p>
 <p align="center">
-    <img src="img/firefox/popup_download_running_light.png" alt="Task running (Light)" width="400px"/>
-    <img src="img/firefox/popup_download_running_dark.png" alt="Task running (Dark)" width="400px"/>
+    <img src="images/Firefox/popup_download_running_light.png" alt="Task running (Light)" width="400px"/>
+    <img src="images/Firefox/popup_download_running_dark.png" alt="Task running (Dark)" width="400px"/>
 </p>
 <p align="center">
-    <img src="img/firefox/popup_download_pause_light.png" alt="Task paused (Light)" width="400px"/>
-    <img src="img/firefox/popup_download_pause_dark.png" alt="Task paused (Dark)" width="400px"/>
+    <img src="images/Firefox/popup_download_pause_light.png" alt="Task paused (Light)" width="400px"/>
+    <img src="images/Firefox/popup_download_pause_dark.png" alt="Task paused (Dark)" width="400px"/>
 </p>
 <p align="center">
-    <img src="img/firefox/popup_download_finished_light.png" alt="Task finished (Light)" width="400px"/>
-    <img src="img/firefox/popup_download_finished_dark.png" alt="Task finished (Dark)" width="400px"/>
+    <img src="images/Firefox/popup_download_finished_light.png" alt="Task finished (Light)" width="400px"/>
+    <img src="images/Firefox/popup_download_finished_dark.png" alt="Task finished (Dark)" width="400px"/>
 </p>
 
 ## Description
