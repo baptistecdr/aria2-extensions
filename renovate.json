@@ -1,10 +1,7 @@
 {
   "extends": [
-    "config:base"
+    "github>baptistecdr/renovate-config"
   ],
-  "git-submodules": {
-    "enabled": true
-  },
   "packageRules": [
     {
       "matchUpdateTypes": ["digest"],
