@@ -1,6 +1,6 @@
 <h3 align="center">Aria2 Integration</h3>
 <p align="center">
-    Aria2 Integration allows you to redirect downloads to your Aria2 server.
+    Send downloads, links, and torrent files directly to your Aria2 server.
 </p>
 
 <p align="center">
@@ -25,27 +25,32 @@
 </p>
 
 ## Description
+Aria2 Integration makes it easy to send downloads from your browser straight to your Aria2 server.
 
-Aria2 Integration allows you to redirect downloads to your Aria2 server. This setting can be tuned in the extension's
-preferences :
+Capture links, selected text, and browser downloads with a single click or from the extension popup. Manage multiple Aria2 servers, add URLs or torrent/metalink files manually, and keep everything under control from one simple interface.
 
-- You can enable/disable this functionality
-- You can exclude some protocols, sites or/and file types
+### Key features
+- Send links and selected text directly to Aria2
+- Capture browser downloads and redirect them to your server
+- Add torrent and metalink files from files or URLs
+- Support for multiple Aria2 servers
+- Quick access to active, waiting, paused, completed, and failed tasks
+- Pause, resume, retry, or remove tasks from the popup
+- Display download and upload speed, progress, ETA, and task status
+- Customizable capture rules, including:
+  - minimum file size
+  - excluded protocols
+  - excluded websites
+  - excluded file types
+- Option to preserve the full destination file path
+- Notifications for added URLs, added files, and errors
+- Light, dark, and automatic theme support
 
-In addition, you can send download links via the context menus:
+### Designed for flexibility
+Whether you use Aria2 locally or on a remote server, Aria2 Integration helps you keep your downloads organized and accessible from your browser.
 
-- Right click on a link and select your server in "Download with Aria2"
-- Right click on multiple text links and select you server in "Download with Aria2"
-
-By clicking on the extension icon, a popup appear. You can see the progress of each Aria2 server:
-
-- Total download/upload speed
-- Progress of each task and possibility to pause/resume/delete
-- Delete all finished tasks
-- Add links, torrent files, magnets link/files
-- A quick settings to enable/disable download redirection
-
-Finally, the extension is available in light/dark theme depending on your system preferences and you can add multiple servers in the extension's preferences.
+### Privacy
+The extension does not collect any data.
 
 ## Quick start
 
