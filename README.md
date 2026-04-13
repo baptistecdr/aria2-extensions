@@ -45,6 +45,9 @@ Capture links, selected text, and browser downloads with a single click or from 
 - Option to preserve the full destination file path
 - Notifications for added URLs, added files, and errors
 - Light, dark, and automatic theme support
+- Incognito mode options, including:
+    - automatic download purging
+    - RPC parameters overrides
 
 ### Designed for flexibility
 Whether you use Aria2 locally or on a remote server, Aria2 Integration helps you keep your downloads organized and accessible from your browser.
