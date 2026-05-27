@@ -1,6 +1,6 @@
 <h3 align="center">Aria2 Integration</h3>
 <p align="center">
-    Send downloads, links, and torrent files directly to your Aria2 server.
+    Send downloads, links, and torrent files directly to your Aria2 server or Motrix instance.
 </p>
 
 <p align="center">
@@ -25,9 +25,9 @@
 </p>
 
 ## Description
-Aria2 Integration makes it easy to send downloads from your browser straight to your Aria2 server.
+Aria2 Integration makes it easy to send downloads from your browser straight to your Aria2 server or a compatible Motrix instance.
 
-Capture links, selected text, and browser downloads with a single click or from the extension popup. Manage multiple Aria2 servers, add URLs or torrent/metalink files manually, and keep everything under control from one simple interface.
+Capture links, selected text, and browser downloads with a single click or from the extension popup. Manage multiple Aria2/Motrix servers, add URLs or torrent/metalink files manually, and keep everything under control from one simple interface.
 
 ### Key features
 - Send links and selected text directly to Aria2
