@@ -1,0 +1,1 @@
+Send links, magnets and torrents from Safari or any app straight to your Aria2 server, and follow every download from the toolbar.
