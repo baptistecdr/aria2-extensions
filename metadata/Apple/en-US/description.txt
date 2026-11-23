@@ -1,0 +1,34 @@
+Aria2 Integration connects Safari to your Aria2 server, so you can send downloads to it from your iPhone, iPad or Mac in a tap or a click.
+
+Right-click a link, share a link or a torrent file from any app, or paste links into the popup: Aria2 Integration sends them to your server, and you follow and control every download without leaving Safari.
+
+SEND DOWNLOADS
+• "Download with Aria2" in the context menu of links and selected text
+• Share extension: send a link, magnet link or torrent file to Aria2 from any app
+• Add links and magnet links from the popup
+• Add torrent and metalink files from your device
+
+FOLLOW AND CONTROL
+• See active, waiting, paused, completed and failed downloads
+• Progress, speed, time remaining and connections for each download
+• Pause, resume, retry or remove a download
+• Clear all finished downloads in one tap
+• The number of active downloads is shown on the toolbar icon
+
+YOUR SERVERS
+• Add as many Aria2 servers as you need
+• Secure connections and secret token support
+• Default RPC parameters for each server, such as the download folder or a speed limit
+
+PRIVATE BROWSING
+• Use different RPC parameters for downloads sent from a private window
+• Automatically clear finished downloads from the server while you browse privately
+
+APPEARANCE
+• Light, dark or automatic theme
+
+REQUIREMENTS
+Aria2 Integration controls an Aria2 server; it does not download files itself. You need Aria2 running with RPC enabled (for example aria2c --enable-rpc) and reachable from your device.
+
+PRIVACY
+Aria2 Integration only talks to the Aria2 servers you add. No account, no tracking.

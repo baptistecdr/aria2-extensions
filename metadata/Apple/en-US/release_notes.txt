@@ -1,0 +1,3 @@
+• A new app icon, designed for the Liquid Glass look of iOS 26 and macOS 26, with a bolt that ends in a download arrow.
+• The extension now has a matching icon in the Extensions list, and a simpler, clearer symbol in the Safari toolbar.
+• Fixed the extension popup on iPhone Duo and other devices where it opened too narrow, with every line wrapping. It now uses the available space.

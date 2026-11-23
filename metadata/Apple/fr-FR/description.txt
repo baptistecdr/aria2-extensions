@@ -1,0 +1,34 @@
+Aria2 Integration relie Safari à votre serveur Aria2 : envoyez-lui vos téléchargements depuis votre iPhone, iPad ou Mac en un geste ou un clic.
+
+Faites un clic droit sur un lien, partagez un lien ou un fichier torrent depuis n'importe quelle app, ou collez des liens dans la fenêtre de l'extension : Aria2 Integration les envoie à votre serveur, et vous suivez et contrôlez chaque téléchargement sans quitter Safari.
+
+ENVOYER DES TÉLÉCHARGEMENTS
+• « Télécharger avec Aria2 » dans le menu contextuel des liens et du texte sélectionné
+• Extension de partage : envoyez un lien, un lien magnet ou un fichier torrent à Aria2 depuis n'importe quelle app
+• Ajoutez des liens et des liens magnet depuis la fenêtre de l'extension
+• Ajoutez des fichiers torrent et metalink depuis votre appareil
+
+SUIVRE ET CONTRÔLER
+• Consultez les téléchargements actifs, en attente, en pause, terminés et en erreur
+• Progression, vitesse, temps restant et connexions pour chaque téléchargement
+• Mettez en pause, reprenez, relancez ou supprimez un téléchargement
+• Supprimez tous les téléchargements terminés en un geste
+• Le nombre de téléchargements actifs s'affiche sur l'icône de la barre d'outils
+
+VOS SERVEURS
+• Ajoutez autant de serveurs Aria2 que nécessaire
+• Connexions sécurisées et prise en charge du jeton secret
+• Paramètres RPC par défaut pour chaque serveur, comme le dossier de téléchargement ou une limite de vitesse
+
+NAVIGATION PRIVÉE
+• Utilisez des paramètres RPC différents pour les téléchargements envoyés depuis une fenêtre privée
+• Supprimez automatiquement les téléchargements terminés du serveur pendant la navigation privée
+
+APPARENCE
+• Thème clair, sombre ou automatique
+
+CONFIGURATION REQUISE
+Aria2 Integration pilote un serveur Aria2 ; elle ne télécharge pas les fichiers elle-même. Aria2 doit être lancé avec RPC activé (par exemple aria2c --enable-rpc) et accessible depuis votre appareil.
+
+CONFIDENTIALITÉ
+Aria2 Integration communique uniquement avec les serveurs Aria2 que vous ajoutez. Aucun compte, aucun suivi.
