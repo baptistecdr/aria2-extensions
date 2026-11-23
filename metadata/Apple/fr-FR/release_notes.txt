@@ -1,3 +1,0 @@
-• Une nouvelle icône, conçue pour le style Liquid Glass d'iOS 26 et macOS 26, avec un éclair qui se termine par une flèche de téléchargement.
-• L'extension a désormais une icône assortie dans la liste des extensions, et un symbole plus simple et plus lisible dans la barre d'outils de Safari.
-• Correction de la fenêtre de l'extension sur iPhone Duo et sur les appareils où elle s'ouvrait trop étroite, avec chaque ligne renvoyée à la ligne. Elle utilise maintenant tout l'espace disponible.
