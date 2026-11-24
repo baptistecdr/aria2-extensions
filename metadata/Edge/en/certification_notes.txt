@@ -1,0 +1,19 @@
+Aria2 Integration is a client for aria2, an open-source download utility. The extension does not download files itself: it sends links to an aria2 server through its JSON-RPC interface and shows that server's downloads. No account, login or payment is needed, but a running aria2 server is.
+
+1. Start aria2 with RPC enabled, on the same machine as Edge:
+   - aria2c --enable-rpc --rpc-listen-port=6800 --dir=<any download folder>
+   - aria2 is available from https://aria2.github.io (Windows, macOS, Linux), or with Docker.
+   No secret is needed for local testing.
+
+2. Open the extension's options (Extensions > Aria2 Integration > Extension options), click "+" to add a server, keep the default values (host localhost, port 6800, path /jsonrpc, no secret) and click "Save".
+
+3. Test the features:
+   - Popup: click the toolbar icon to see active, waiting, paused, completed and failed downloads, then pause, resume, retry or remove them.
+   - Add: in the popup, click "Add", paste a link (for example a Linux ISO URL) or a magnet link, and click "Add". The download appears in the list.
+   - Context menu: right-click a link or selected text and choose "Download with Aria2".
+   - Capture: in the options, tick "Capture downloads", then start a download in Edge: it is sent to aria2 instead of Edge's downloader. Ctrl+Shift+D turns capture on or off.
+   - Private window: the server's "Incognito Mode" options apply to downloads sent from an InPrivate window.
+
+Permissions: downloads (capture), contextMenus (menu entry), storage (settings), notifications (added/error messages), cookies (forwarded to aria2 so authenticated downloads work), host access (to reach the user's aria2 server and read download URLs).
+
+Privacy: the extension only talks to the aria2 servers the user adds. It collects no data and has no analytics.
