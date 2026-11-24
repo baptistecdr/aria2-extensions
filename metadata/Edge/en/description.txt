@@ -1,0 +1,38 @@
+Aria2 Integration connects Microsoft Edge to your Aria2 server or Motrix, so you can send downloads to it in a click.
+
+Right-click a link, let the extension catch your browser downloads, or paste links into the popup: Aria2 Integration sends them to your server, and you follow and control every download without leaving Microsoft Edge.
+
+SEND DOWNLOADS
+• "Download with Aria2" in the context menu of links and selected text
+• Add links and magnet links from the popup
+• Add torrent and metalink files from your computer
+• Capture browser downloads and send them to Aria2 instead, with Ctrl+Shift+D to turn it on or off
+• Skip some downloads by protocol, site, file type or minimum size
+• Keep the full file path chosen in "Save link as…"
+
+FOLLOW AND CONTROL
+• See active, waiting, paused, completed and failed downloads
+• Progress, speed, time remaining and connections for each download
+• Pause, resume, retry or remove a download
+• Clear all finished downloads in one click
+• The number of active downloads is shown on the toolbar icon
+• Notifications when a link or file is added, or when something goes wrong
+
+YOUR SERVERS
+• Add as many Aria2 servers or Motrix instances as you need
+• Secure connections and secret token support
+• Default RPC parameters for each server, such as the download folder or a speed limit
+• Servers and settings can be deployed through an enterprise policy
+
+PRIVATE BROWSING
+• Use different RPC parameters for downloads sent from a private window
+• Automatically clear finished downloads from the server while you browse privately
+
+APPEARANCE
+• Light, dark or automatic theme
+
+REQUIREMENTS
+Aria2 Integration controls an Aria2 server; it does not download files itself. You need Aria2 running with RPC enabled, or Motrix, reachable from your device.
+
+PRIVACY
+Aria2 Integration only talks to the Aria2 servers you add. No account, no tracking.
