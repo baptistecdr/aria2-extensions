@@ -3,7 +3,7 @@ Aria2 Integration connects Firefox to your Aria2 server or Motrix, so you can se
 Right-click a link, let the extension catch your browser downloads, or paste links into the popup: Aria2 Integration sends them to your server, and you follow and control every download without leaving Firefox.
 
 SEND DOWNLOADS
-• "Downloads with Aria2" in the context menu of links and selected text
+• "Download with Aria2" in the context menu of links and selected text
 • Add links and magnet links from the popup
 • Add torrent and metalink files from your computer
 • Capture browser downloads and send them to Aria2 instead, with Ctrl+Shift+D to turn it on or off
