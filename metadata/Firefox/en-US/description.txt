@@ -33,7 +33,7 @@ APPEARANCE
 • Works on Firefox for desktop and Android
 
 REQUIREMENTS
-Aria2 Integration controls an Aria2 server; it does not download files itself. You need Aria2 running with RPC enabled (for example aria2c --enable-rpc), or Motrix, reachable from your device.
+Aria2 Integration controls an Aria2 server; it does not download files itself. You need Aria2 running with RPC enabled, or Motrix, reachable from your device.
 
 PRIVACY
 Aria2 Integration only talks to the Aria2 servers you add. No account, no tracking.

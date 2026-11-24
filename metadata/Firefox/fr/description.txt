@@ -33,7 +33,7 @@ APPARENCE
 • Fonctionne sur Firefox pour ordinateur et Android
 
 CONFIGURATION REQUISE
-Aria2 Integration pilote un serveur Aria2 ; elle ne télécharge pas les fichiers elle-même. Aria2 doit être lancé avec RPC activé (par exemple aria2c --enable-rpc), ou Motrix, et être accessible depuis votre appareil.
+Aria2 Integration pilote un serveur Aria2 ; elle ne télécharge pas les fichiers elle-même. Aria2, lancé avec RPC activé, ou Motrix doit être accessible depuis votre appareil.
 
 CONFIDENTIALITÉ
 Aria2 Integration communique uniquement avec les serveurs Aria2 que vous ajoutez. Aucun compte, aucun suivi.
