@@ -1,0 +1,3 @@
+Suivez progression et vitesse, mettez en pause, reprenez ou supprimez depuis la popup.
+Collez des liens et des magnets, ou choisissez des fichiers torrent et metalink.
+Hôte, port, secret, paramètres RPC et navigation privée pour chaque serveur.

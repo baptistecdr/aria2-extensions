@@ -1,0 +1,3 @@
+Track progress and speed, then pause, resume or remove downloads from the popup.
+Paste links and magnets, or pick torrent and metalink files from your computer.
+Host, port, secret, RPC parameters and private browsing options for each server.
