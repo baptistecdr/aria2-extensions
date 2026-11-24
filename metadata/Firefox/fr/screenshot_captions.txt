@@ -1,0 +1,3 @@
+Suivez vos téléchargements Aria2 depuis la popup : progression, vitesse, pause, reprise et suppression.
+Ajoutez des liens, des magnets et des fichiers torrent ou metalink en quelques clics.
+Configurez autant de serveurs Aria2 que vous le souhaitez : hôte, port, secret, paramètres RPC et mode privé.

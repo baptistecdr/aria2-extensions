@@ -1,0 +1,1 @@
+Envoyez liens, texte sélectionné, torrents et téléchargements du navigateur à votre serveur Aria2 ou à Motrix. Suivez et contrôlez chaque téléchargement depuis la barre d'outils, sur autant de serveurs que nécessaire.

@@ -1,0 +1,39 @@
+Aria2 Integration relie Firefox à votre serveur Aria2 ou à Motrix : envoyez-lui vos téléchargements en un clic.
+
+Faites un clic droit sur un lien, laissez l'extension intercepter les téléchargements du navigateur, ou collez des liens dans la popup : Aria2 Integration les envoie à votre serveur, et vous suivez et contrôlez chaque téléchargement sans quitter Firefox.
+
+ENVOYER DES TÉLÉCHARGEMENTS
+• « Télécharger avec Aria2 » dans le menu contextuel des liens et du texte sélectionné
+• Ajoutez des liens et des liens magnet depuis la popup
+• Ajoutez des fichiers torrent et metalink depuis votre ordinateur
+• Interceptez les téléchargements du navigateur pour les envoyer à Aria2, avec Ctrl+Maj+D pour activer ou désactiver
+• Excluez des téléchargements selon le protocole, le site, le type de fichier ou une taille minimale
+• Conservez le chemin complet choisi dans « Enregistrer la cible du lien sous… »
+
+SUIVRE ET CONTRÔLER
+• Consultez les téléchargements actifs, en attente, en pause, terminés et en erreur
+• Progression, vitesse, temps restant et connexions pour chaque téléchargement
+• Mettez en pause, reprenez, relancez ou supprimez un téléchargement
+• Supprimez tous les téléchargements terminés en un clic
+• Le nombre de téléchargements actifs s'affiche sur l'icône de la barre d'outils
+• Notifications quand un lien ou un fichier est ajouté, ou en cas d'erreur
+
+VOS SERVEURS
+• Ajoutez autant de serveurs Aria2 ou d'instances Motrix que nécessaire
+• Connexions sécurisées et prise en charge du jeton secret
+• Paramètres RPC par défaut pour chaque serveur, comme le dossier de téléchargement ou une limite de vitesse
+• Serveurs et réglages déployables par stratégie d'entreprise
+
+NAVIGATION PRIVÉE
+• Utilisez des paramètres RPC différents pour les téléchargements envoyés depuis une fenêtre privée
+• Supprimez automatiquement les téléchargements terminés du serveur pendant la navigation privée
+
+APPARENCE
+• Thème clair, sombre ou automatique
+• Fonctionne sur Firefox pour ordinateur et Android
+
+CONFIGURATION REQUISE
+Aria2 Integration pilote un serveur Aria2 ; elle ne télécharge pas les fichiers elle-même. Il vous faut Aria2 lancé avec RPC activé, ou Motrix, accessible depuis votre appareil.
+
+CONFIDENTIALITÉ
+Aria2 Integration communique uniquement avec les serveurs Aria2 que vous ajoutez. Aucun compte, aucun suivi.

@@ -28,7 +28,7 @@ APPEARANCE
 • Light, dark or automatic theme
 
 REQUIREMENTS
-Aria2 Integration controls an Aria2 server; it does not download files itself. You need Aria2 running with RPC enabled (for example aria2c --enable-rpc) and reachable from your device.
+Aria2 Integration controls an Aria2 server; it does not download files itself. You need Aria2 running with RPC enabled and reachable from your device.
 
 PRIVACY
 Aria2 Integration only talks to the Aria2 servers you add. No account, no tracking.

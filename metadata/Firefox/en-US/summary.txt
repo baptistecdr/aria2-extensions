@@ -1,0 +1,1 @@
+Send links, selected text, torrents and browser downloads to your Aria2 server or Motrix. Follow and control every download from the toolbar, across as many servers as you need.
