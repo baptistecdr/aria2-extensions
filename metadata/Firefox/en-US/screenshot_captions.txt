@@ -1,0 +1,3 @@
+Track your Aria2 downloads from the popup: progress, speed, pause, resume and remove.
+Add links, magnets, and torrent or metalink files in a few clicks.
+Set up as many Aria2 servers as you need: host, port, secret, RPC parameters and private browsing mode.
